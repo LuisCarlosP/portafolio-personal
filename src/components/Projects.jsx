@@ -106,7 +106,7 @@ const Projects = () => {
                     </a>
                   </div>
                 </div>
-                {project.featured && <span className="featured-badge">Destacado</span>}
+                {project.featured && <span className="featured-badge">{t('featured')}</span>}
               </div>
               
               <div className="project-content">

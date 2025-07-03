@@ -1,10 +1,12 @@
 import React from 'react'
 import './Skills.css'
+import { useTranslations } from '../hooks/useTranslations'
 
 const Skills = () => {
+  const { t } = useTranslations()
   const skillCategories = [
     {
-      title: "Frontend",
+      title: t('frontend'),
       skills: [
         { name: "React", level: 85, icon: "fab fa-react" },
         { name: "JavaScript", level: 90, icon: "fab fa-js-square" },
@@ -15,7 +17,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "Backend & Databases",
+      title: t('backend'),
       skills: [
         { name: "Node.js", level: 85, icon: "fab fa-node-js" },
         { name: "Python", level: 80, icon: "fab fa-python" },
@@ -26,7 +28,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "DevOps & Tools",
+      title: t('databasesTools'),
       skills: [
         { name: "Git", level: 90, icon: "fab fa-git-alt" },
         { name: "Docker", level: 70, icon: "fab fa-docker" },
@@ -42,8 +44,8 @@ const Skills = () => {
     <section id="habilidades" className="skills">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Habilidades Técnicas</h2>
-          <p className="section-subtitle">Tecnologías y herramientas que domino y uso en mis proyectos</p>
+          <h2 className="section-title">{t('skillsTitle')}</h2>
+          <p className="section-subtitle">{t('skillsSubtitle')}</p>
         </div>
         
         <div className="skills-grid">
@@ -76,16 +78,16 @@ const Skills = () => {
         
         <div className="skills-summary">
           <div className="summary-item">
-            <h4>Especialización</h4>
-            <p>Desarrollo Full-Stack con React, Node.js y Python</p>
+            <h4>{t('specialization')}</h4>
+            <p>{t('specializationDesc')}</p>
           </div>
           <div className="summary-item">
-            <h4>Experiencia</h4>
-            <p>2+ años desarrollando aplicaciones web modernas</p>
+            <h4>{t('experience')}</h4>
+            <p>{t('experienceDesc')}</p>
           </div>
           <div className="summary-item">
-            <h4>Metodología</h4>
-            <p>Desarrollo ágil, clean code y mejores prácticas</p>
+            <h4>{t('methodology')}</h4>
+            <p>{t('methodologyDesc')}</p>
           </div>
         </div>
       </div>

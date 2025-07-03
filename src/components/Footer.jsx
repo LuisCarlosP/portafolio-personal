@@ -46,9 +46,9 @@ const Footer = () => {
           <div className="footer-section">
             <h4>{t('contact')}</h4>
             <div className="contact-info">
-              <p><i className="fas fa-envelope"></i> luisc.picado.c@gmail.com</p>
-              <p><i className="fas fa-phone"></i> +506 8849-1784</p>
-              <p><i className="fas fa-map-marker-alt"></i> Zapote, San Jose, Costa Rica</p>
+              <p><i className="fas fa-envelope"></i> picadoluiscarlos@gmail.com</p>
+              <p><i className="fas fa-phone"></i> +506 8723 3132</p>
+              <p><i className="fas fa-map-marker-alt"></i> San José, Costa Rica</p>
             </div>
             <div className="social-links">
               <a href="https://github.com/LuisCarlosP" target="_blank" rel="noopener noreferrer" title="GitHub">

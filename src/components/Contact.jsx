@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import './Contact.css'
 import { useTranslations } from '../hooks/useTranslations'
+import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const { t, language } = useTranslations()
+  const form = useRef()
+  const [isLoading, setIsLoading] = useState(false)
+  const [message, setMessage] = useState('')
   
   const contactInfo = [
     {
@@ -23,12 +27,6 @@ const Contact = () => {
       title: t('location'),
       value: 'San José, Costa Rica',
       link: '#'
-    },
-    {
-      icon: 'fab fa-linkedin',
-      title: 'LinkedIn',
-      value: 'Luis Carlos Picado Rojas',
-      link: 'https://www.linkedin.com/in/luis-carlos-picado-rojas-6b035227a/'
     }
   ]
 
@@ -44,6 +42,28 @@ const Contact = () => {
       link: 'https://www.linkedin.com/in/luis-carlos-picado-rojas-6b035227a/'
     }
   ]
+
+  const sendEmail = (e) => {
+    e.preventDefault()
+    setIsLoading(true)
+    setMessage('')
+
+    // Configuración de EmailJS desde variables de entorno
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+    emailjs.sendForm(serviceID, templateID, form.current, publicKey)
+      .then(() => {
+        setMessage(t('messageSent') || 'Message sent successfully!')
+        setIsLoading(false)
+        form.current.reset()
+      })
+      .catch(() => {
+        setMessage(t('messageError') || 'Error sending message. Please try again.')
+        setIsLoading(false)
+      })
+  }
 
   return (
     <section id="contacto" className="contact">
@@ -98,6 +118,65 @@ const Contact = () => {
                   </a>
                 ))}
               </div>
+            </div>
+          </div>
+          
+          <div className="contact-form-section">
+            <div className="contact-form-container">
+              <h3>{t('sendMessage') || 'Send me a message'}</h3>
+              <p className="form-description">
+                {t('sendMessageDescription') || 'Have a project in mind or want to collaborate? Send me a message and I\'ll get back to you as soon as possible.'}
+              </p>
+              <form ref={form} onSubmit={sendEmail} className="contact-form">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="from_name"
+                    placeholder={t('yourName') || 'Your Name'}
+                    required
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    name="from_email"
+                    placeholder={t('yourEmail') || 'Your Email'}
+                    required
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="text"
+                    name="subject"
+                    placeholder={t('subject') || 'Subject'}
+                    required
+                    className="form-input"
+                  />
+                </div>
+                <div className="form-group">
+                  <textarea
+                    name="message"
+                    placeholder={t('yourMessage') || 'Your Message'}
+                    required
+                    rows="5"
+                    className="form-textarea"
+                  ></textarea>
+                </div>
+                <button 
+                  type="submit" 
+                  disabled={isLoading}
+                  className="btn btn-primary form-submit"
+                >
+                  {isLoading ? (t('sending') || 'Sending...') : (t('sendMessage') || 'Send Message')}
+                </button>
+                {message && (
+                  <div className={`form-message ${message.includes('Error') ? 'error' : 'success'}`}>
+                    {message}
+                  </div>
+                )}
+              </form>
             </div>
           </div>
         </div>

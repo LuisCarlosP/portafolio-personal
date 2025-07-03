@@ -33,6 +33,12 @@ export const translations = {
     frontend: 'Frontend',
     backend: 'Backend',
     databasesTools: 'Databases & Tools',
+    specialization: 'Specialization',
+    specializationDesc: 'Full-Stack Development with React, Node.js and Python',
+    experience: 'Experience',
+    experienceDesc: '2+ years developing modern web applications',
+    methodology: 'Methodology',
+    methodologyDesc: 'Agile development, clean code and best practices',
     
     // Projects
     projectsTitle: 'Projects',
@@ -40,6 +46,7 @@ export const translations = {
     viewCode: 'View Code',
     liveDemo: 'Live Demo',
     moreProjects: 'View more projects',
+    featured: 'Featured',
     
     // Project descriptions
     frontendProject: 'Web application developed with Angular, TypeScript and Bootstrap. Includes dynamic navigation, reusable components and responsive design.',
@@ -49,12 +56,21 @@ export const translations = {
     // Contact
     contactTitle: 'Contact',
     contactSubtitle: 'Get in touch with me',
-    contactInfo: 'Contact Information',
-    contactDescription: 'I am available for job opportunities, internships, and development projects. As a software development student specialized in Java Spring Boot and React/Angular, I seek to be part of teams where I can apply my knowledge and continue growing professionally.',
+    contactInfo: 'Contact Information & Details',
+    contactDescription: 'Available for job opportunities, internships, and development projects. Student specialized in Java Spring Boot and React/Angular.',
     email: 'Email',
     phone: 'Phone',
     location: 'Location',
     findMeOn: 'Find me on:',
+    sendMessage: 'Send me a Direct Message',
+    sendMessageDescription: 'Have a project in mind or want to collaborate? Send me a message and I\'ll get back to you as soon as possible.',
+    yourName: 'Your Name',
+    yourEmail: 'Your Email',
+    subject: 'Subject',
+    yourMessage: 'Your Message',
+    sending: 'Sending...',
+    messageSent: 'Message sent successfully!',
+    messageError: 'Error sending message. Please try again.',
     
     // Footer
     footerDescription: 'Systems Engineering student specialized in Full-Stack development with Java, Spring Boot, React and Angular. Passionate about learning new technologies and creating innovative solutions.',
@@ -98,6 +114,12 @@ export const translations = {
     frontend: 'Frontend',
     backend: 'Backend',
     databasesTools: 'Bases de Datos y Herramientas',
+    specialization: 'Especialización',
+    specializationDesc: 'Desarrollo Full-Stack con React, Node.js y Python',
+    experience: 'Experiencia',
+    experienceDesc: '2+ años desarrollando aplicaciones web modernas',
+    methodology: 'Metodología',
+    methodologyDesc: 'Desarrollo ágil, clean code y mejores prácticas',
     
     // Projects
     projectsTitle: 'Proyectos',
@@ -105,6 +127,7 @@ export const translations = {
     viewCode: 'Ver Código',
     liveDemo: 'Demo en Vivo',
     moreProjects: 'Ver más proyectos',
+    featured: 'Destacado',
     
     // Project descriptions
     frontendProject: 'Aplicación web desarrollada con Angular, TypeScript y Bootstrap. Incluye navegación dinámica, componentes reutilizables y diseño responsivo.',
@@ -114,12 +137,21 @@ export const translations = {
     // Contact
     contactTitle: 'Contacto',
     contactSubtitle: 'Ponte en contacto conmigo',
-    contactInfo: 'Información de Contacto',
-    contactDescription: 'Estoy disponible para oportunidades de trabajo, prácticas profesionales y proyectos de desarrollo. Como estudiante de desarrollo de software especializado en Java Spring Boot y React/Angular, busco formar parte de equipos donde pueda aplicar mis conocimientos y seguir creciendo profesionalmente.',
+    contactInfo: 'Información de Contacto y Detalles',
+    contactDescription: 'Disponible para oportunidades laborales, prácticas profesionales y proyectos de desarrollo. Estudiante especializado en Java Spring Boot y React/Angular.',
     email: 'Email',
     phone: 'Teléfono',
     location: 'Ubicación',
     findMeOn: 'Encuéntrame en:',
+    sendMessage: 'Envíame un Mensaje Directo',
+    sendMessageDescription: '¿Tienes un proyecto en mente o quieres colaborar? Envíame un mensaje y te responderé lo antes posible.',
+    yourName: 'Tu Nombre',
+    yourEmail: 'Tu Correo',
+    subject: 'Asunto',
+    yourMessage: 'Tu Mensaje',
+    sending: 'Enviando...',
+    messageSent: '¡Mensaje enviado exitosamente!',
+    messageError: 'Error al enviar mensaje. Por favor intenta de nuevo.',
     
     // Footer
     footerDescription: 'Estudiante de Ingeniería en Sistemas especializado en desarrollo Full-Stack con Java, Spring Boot, React y Angular. Apasionado por aprender nuevas tecnologías y crear soluciones innovadoras.',
