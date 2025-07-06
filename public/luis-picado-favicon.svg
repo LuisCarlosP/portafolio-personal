@@ -1,0 +1,20 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradientes optimizados para favicon -->
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e40af;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#60a5fa;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Hexágono principal optimizado para tamaño pequeño -->
+  <path d="M16 3 L26 8 L26 21 L16 26 L6 21 L6 8 Z" fill="url(#mainGradient)"/>
+  
+  <!-- Iniciales LP con mejor contraste -->
+  <text x="16" y="19" font-family="Arial, sans-serif" font-size="10" font-weight="bold" 
+        text-anchor="middle" fill="#ffffff">LP</text>
+  
+  <!-- Punto decorativo -->
+  <circle cx="16" cy="22" r="1" fill="#fbbf24"/>
+</svg>

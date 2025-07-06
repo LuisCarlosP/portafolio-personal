@@ -23,11 +23,41 @@
   max-width: 1200px;
 }
 
-.logo-text {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  text-decoration: none;
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.logo-image {
+  height: 40px;
+  width: auto;
+  transition: var(--transition);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logo-image:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .logo-image {
+    height: 38px;
+  }
+  
+  @media (max-width: 600px) {
+    .logo-image {
+      height: 35px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo-image {
+      height: 32px;
+    }
+  }
 }
 
 .nav-list {

@@ -1,0 +1,17 @@
+{
+  "name": "Luis Carlos Picado - Portfolio",
+  "short_name": "Luis Picado",
+  "description": "Full Stack Developer Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "icons": [
+    {
+      "src": "/luis-picado-favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

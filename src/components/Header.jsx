@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './Header.css'
 import LanguageSelector from './LanguageSelector'
 import { useTranslations } from '../hooks/useTranslations'
+import logoSvg from '../assets/logo/luis-picado-logo.svg'
+import logoConfig from '../utils/logoConfig'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -27,7 +29,21 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">
-          <span className="logo-text">{t('portfolio')}</span>
+          <img 
+            src={logoSvg} 
+            alt={logoConfig.useTranslationForText ? t('portfolio') : logoConfig.customText} 
+            className="logo-image"
+            style={{ height: `${logoConfig.logoHeight}px` }}
+            onClick={() => logoConfig.clickToHome && scrollToSection('inicio')}
+          />
+          {logoConfig.showText && (
+            <span 
+              className="logo-text" 
+              onClick={() => logoConfig.clickToHome && scrollToSection('inicio')}
+            >
+              {logoConfig.useTranslationForText ? t('portfolio') : logoConfig.customText}
+            </span>
+          )}
         </div>
         
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
