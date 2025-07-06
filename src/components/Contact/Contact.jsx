@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './Contact.css'
-import { useTranslations } from '../hooks/useTranslations'
+import { useTranslations } from '../../hooks/useTranslations'
 import emailjs from '@emailjs/browser'
 
 const Contact = () => {

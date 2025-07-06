@@ -1,6 +1,6 @@
 import React from 'react'
 import './Skills.css'
-import { useTranslations } from '../hooks/useTranslations'
+import { useTranslations } from '../../hooks/useTranslations'
 
 const Skills = () => {
   const { t } = useTranslations()

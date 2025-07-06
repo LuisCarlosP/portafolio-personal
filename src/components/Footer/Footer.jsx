@@ -1,6 +1,6 @@
 import React from 'react'
 import './Footer.css'
-import { useTranslations } from '../hooks/useTranslations'
+import { useTranslations } from '../../hooks/useTranslations'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()

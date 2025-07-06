@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Hero.css'
-import devActivityImage from '../assets/images/profile/Developer-activity-bro.webp'
-import { useTranslations } from '../hooks/useTranslations'
+import devActivityImage from '../../assets/images/profile/Developer-activity-bro.webp'
+import { useTranslations } from '../../hooks/useTranslations'
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState('')

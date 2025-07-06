@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import './Projects.css'
-import { useTranslations } from '../hooks/useTranslations'
-import frontendProyecto3 from '../assets/images/projects/FrontendProyecto3.webp'
-import crudProyecto3 from '../assets/images/projects/CrudProyecto3.webp'
-import simpleGraphQL from '../assets/images/projects/SimpleGraphQL.webp'
+import { useTranslations } from '../../hooks/useTranslations'
+import frontendProyecto3 from '../../assets/images/projects/FrontendProyecto3.webp'
+import crudProyecto3 from '../../assets/images/projects/CrudProyecto3.webp'
+import simpleGraphQL from '../../assets/images/projects/SimpleGraphQL.webp'
 
 const Projects = () => {
   const [filter, setFilter] = useState('all')

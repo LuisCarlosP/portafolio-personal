@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import './Header.css'
-import LanguageSelector from './LanguageSelector'
-import { useTranslations } from '../hooks/useTranslations'
-import logoSvg from '../assets/logo/luis-picado-logo.svg'
-import logoConfig from '../utils/logoConfig'
+import LanguageSelector from '../LanguageSelector/LanguageSelector'
+import { useTranslations } from '../../hooks/useTranslations'
+import logoSvg from '../../assets/logo/luis-picado-logo.svg'
+import logoConfig from '../../utils/logoConfig'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
