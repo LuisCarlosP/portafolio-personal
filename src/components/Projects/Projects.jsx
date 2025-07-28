@@ -4,6 +4,7 @@ import { useTranslations } from '../../hooks/useTranslations'
 import frontendProyecto3 from '../../assets/images/projects/FrontendProyecto3.webp'
 import crudProyecto3 from '../../assets/images/projects/CrudProyecto3.webp'
 import simpleGraphQL from '../../assets/images/projects/SimpleGraphQL.webp'
+import trashIA from '../../assets/images/projects/TrashIA.webp'
 
 const Projects = () => {
   const [filter, setFilter] = useState('all')
@@ -19,7 +20,7 @@ const Projects = () => {
       category: "frontend",
       demoUrl: "https://www.youtube.com/watch?v=whnM4r6fZGU",
       codeUrl: "https://github.com/LuisCarlosP/FrontEndProyecto3",
-      featured: true
+      featured: false
     },
     {
       id: 2,
@@ -30,10 +31,21 @@ const Projects = () => {
       category: "backend",
       demoUrl: "https://www.youtube.com/watch?v=whnM4r6fZGU",
       codeUrl: "https://github.com/LuisCarlosP/CRUDProyecto3",
-      featured: true
+      featured: false
     },
     {
       id: 3,
+      title: "TrashIA",
+      description: t('trashIAProject'),
+      image: trashIA,
+      technologies: ["Java", "Spring Boot", "Python", "Gradle", "FastAPI"],
+      category: "fullstack",
+      demoUrl: "https://youtu.be/w1eLc3p4GKQ",
+      codeUrl: "https://github.com/LuisCarlosP/TrashIA",
+      featured: true
+    },
+    {
+      id: 4,
       title: "Simple GraphQL API",
       description: t('graphqlProject'),
       image: simpleGraphQL,

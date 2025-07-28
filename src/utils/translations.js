@@ -52,6 +52,7 @@ export const translations = {
     frontendProject: 'Web application developed with Angular, TypeScript and Bootstrap. Includes dynamic navigation, reusable components and responsive design.',
     crudProject: 'Complete REST API developed with Spring Boot and Gradle. Implements CRUD operations with layered architecture and best practices.',
     graphqlProject: 'GraphQL server developed with Spring Boot and Maven. Demonstrates efficient and flexible queries for modern APIs.',
+    trashIAProject: 'TrashIA is a full-stack project that combines Java with Spring Boot, Python with FastAPI, and Angular to deliver a comprehensive solution for intelligent waste recognition and management.',
     
     // Contact
     contactTitle: 'Contact',
@@ -133,6 +134,7 @@ export const translations = {
     frontendProject: 'Aplicación web desarrollada con Angular, TypeScript y Bootstrap. Incluye navegación dinámica, componentes reutilizables y diseño responsivo.',
     crudProject: 'API REST completa desarrollada con Spring Boot y Gradle. Implementa operaciones CRUD con arquitectura en capas y buenas prácticas.',
     graphqlProject: 'Servidor GraphQL desarrollado con Spring Boot y Maven. Demuestra consultas eficientes y flexibles para APIs modernas.',
+    trashIAProject: 'TrashIA es un proyecto full stack que combina Java con Spring Boot, Python con FastAPI y Angular, ofreciendo una solución integral para la identificación y gestión inteligente de residuos.',
     
     // Contact
     contactTitle: 'Contacto',
