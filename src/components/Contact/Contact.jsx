@@ -171,11 +171,13 @@ const Contact = () => {
                 >
                   {isLoading ? (t('sending') || 'Sending...') : (t('sendMessage') || 'Send Message')}
                 </button>
-                {message && (
-                  <div className={`form-message ${message.includes('Error') ? 'error' : 'success'}`}>
-                    {message}
-                  </div>
-                )}
+                <div className="form-message-container">
+                  {message && (
+                    <div className={`form-message ${message.includes('Error') ? 'error' : 'success'}`}>
+                      {message}
+                    </div>
+                  )}
+                </div>
               </form>
             </div>
           </div>
