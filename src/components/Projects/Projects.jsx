@@ -5,7 +5,7 @@ import frontendProyecto3 from '../../assets/images/projects/FrontendProyecto3.we
 import crudProyecto3 from '../../assets/images/projects/CrudProyecto3.webp'
 import simpleGraphQL from '../../assets/images/projects/SimpleGraphQL.webp'
 import trashIA from '../../assets/images/projects/TrashIA.webp'
-import chess3D from '../../assets/images/projects/Chess3D.webp'
+import chess3D from '../../assets/images/projects/chess3D.webp'
 
 const Projects = () => {
   const [filter, setFilter] = useState('all')
