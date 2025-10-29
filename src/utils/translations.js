@@ -53,6 +53,7 @@ export const translations = {
     crudProject: 'Complete REST API developed with Spring Boot and Gradle. Implements CRUD operations with layered architecture and best practices.',
     graphqlProject: 'GraphQL server developed with Spring Boot and Maven. Demonstrates efficient and flexible queries for modern APIs.',
     trashIAProject: 'TrashIA is a full-stack project that combines Java with Spring Boot, Python with FastAPI, and Angular to deliver a comprehensive solution for intelligent waste recognition and management.',
+    chess3DProject: 'Interactive 3D chess game built with React and Three.js. Features realistic 3D graphics, complete chess logic with chess.js, and an immersive gaming experience.',
     
     // Contact
     contactTitle: 'Contact',
@@ -135,6 +136,7 @@ export const translations = {
     crudProject: 'API REST completa desarrollada con Spring Boot y Gradle. Implementa operaciones CRUD con arquitectura en capas y buenas prácticas.',
     graphqlProject: 'Servidor GraphQL desarrollado con Spring Boot y Maven. Demuestra consultas eficientes y flexibles para APIs modernas.',
     trashIAProject: 'TrashIA es un proyecto full stack que combina Java con Spring Boot, Python con FastAPI y Angular, ofreciendo una solución integral para la identificación y gestión inteligente de residuos.',
+    chess3DProject: 'Juego de ajedrez 3D interactivo construido con React y Three.js. Presenta gráficos 3D realistas, lógica completa de ajedrez con chess.js y una experiencia de juego inmersiva.',
     
     // Contact
     contactTitle: 'Contacto',

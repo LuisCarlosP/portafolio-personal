@@ -5,6 +5,7 @@ import frontendProyecto3 from '../../assets/images/projects/FrontendProyecto3.we
 import crudProyecto3 from '../../assets/images/projects/CrudProyecto3.webp'
 import simpleGraphQL from '../../assets/images/projects/SimpleGraphQL.webp'
 import trashIA from '../../assets/images/projects/TrashIA.webp'
+import chess3D from '../../assets/images/projects/Chess3D.webp'
 
 const Projects = () => {
   const [filter, setFilter] = useState('all')
@@ -53,6 +54,17 @@ const Projects = () => {
       category: "backend",
       demoUrl: "#",
       codeUrl: "https://github.com/LuisCarlosP/SimpleGraphQL",
+      featured: false
+    },
+    {
+      id: 5,
+      title: "Chess 3D",
+      description: t('chess3DProject'),
+      image: chess3D,
+      technologies: ["React", "Three.js", "chess.js"],
+      category: "frontend",
+      demoUrl: "https://luiscarlosp.github.io/chess-3d/",
+      codeUrl: "https://github.com/LuisCarlosP/chess-3d",
       featured: false
     }
   ]
