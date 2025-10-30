@@ -54,7 +54,7 @@ const Footer = () => {
               <a href="https://github.com/LuisCarlosP" target="_blank" rel="noopener noreferrer" title="GitHub">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="https://www.linkedin.com/in/luis-carlos-picado-rojas-6b035227a/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <a href="https://www.linkedin.com/in/luiscarlosp/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
                 <i className="fab fa-linkedin"></i>
               </a>
             </div>

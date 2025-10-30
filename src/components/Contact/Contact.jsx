@@ -39,7 +39,7 @@ const Contact = () => {
     {
       icon: 'fab fa-linkedin',
       name: 'LinkedIn',
-      link: 'https://www.linkedin.com/in/luis-carlos-picado-rojas-6b035227a/'
+      link: 'https://www.linkedin.com/in/luiscarlosp/'
     }
   ]
 

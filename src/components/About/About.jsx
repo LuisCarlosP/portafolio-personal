@@ -51,7 +51,7 @@ const About = () => {
             
             <div className="about-actions">
               <a 
-                href={`${import.meta.env.BASE_URL}documents/CVLuisCarlosPicadoEnglish.pdf`}
+                href={`${import.meta.env.BASE_URL}documents/`}
                 download="CV_Luis_Carlos_Picado.pdf"
                 className="btn btn-primary"
               >

@@ -76,7 +76,7 @@ const Hero = () => {
                 <i className="fas fa-arrow-right btn-icon"></i>
               </button>
               <a 
-                href={`${import.meta.env.BASE_URL}documents/CVLuisCarlosPicadoEnglish.pdf`}
+                href={`${import.meta.env.BASE_URL}documents/CV_Luis_Carlos_Picado_Rojas.pdf`}
                 download="CV_Luis_Carlos_Picado.pdf"
                 className="btn btn-secondary"
               >
