@@ -20,6 +20,9 @@ const About = () => {
                 src={profileImage} 
                 alt="Luis Carlos Picado - Estudiante de Desarrollo de Software" 
                 className="profile-image"
+                width="320"
+                height="320"
+                loading="lazy"
               />
               <div className="image-overlay"></div>
             </div>
