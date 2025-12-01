@@ -1,4 +1,8 @@
 import React, { useState } from 'react'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/pagination'
 import './Projects.css'
 import { useTranslations } from '../../hooks/useTranslations'
 import frontendProyecto3 from '../../assets/images/projects/FrontendProyecto3.webp'
@@ -102,50 +106,75 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="projects-grid">
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          spaceBetween={30}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true
+          }}
+          loop={true}
+          breakpoints={{
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20
+            },
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 25
+            },
+            1024: {
+              slidesPerView: 3,
+              spaceBetween: 30
+            }
+          }}
+          className="projects-swiper"
+        >
           {filteredProjects.map(project => (
-            <div 
-              key={project.id} 
-              className={`project-card ${project.featured ? 'featured' : ''}`}
-            >
-              <div className="project-image">
-                <img src={project.image} alt={project.title} />
-                <div className="project-overlay">
-                  <div className="project-links">
-                    <a 
-                      href={project.demoUrl} 
-                      className="btn btn-small btn-primary"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t('liveDemo')}
-                    </a>
-                    <a 
-                      href={project.codeUrl} 
-                      className="btn btn-small btn-outline"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {t('viewCode')}
-                    </a>
+            <SwiperSlide key={project.id}>
+              <div className={`project-card ${project.featured ? 'featured' : ''}`}>
+                <div className="project-image">
+                  <img src={project.image} alt={project.title} />
+                  <div className="project-overlay">
+                    <div className="project-links">
+                      <a 
+                        href={project.demoUrl} 
+                        className="btn btn-small btn-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t('liveDemo')}
+                      </a>
+                      <a 
+                        href={project.codeUrl} 
+                        className="btn btn-small btn-outline"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {t('viewCode')}
+                      </a>
+                    </div>
+                  </div>
+                  {project.featured && <span className="featured-badge">{t('featured')}</span>}
+                </div>
+                
+                <div className="project-content">
+                  <h3 className="project-title">{project.title}</h3>
+                  <p className="project-description">{project.description}</p>
+                  
+                  <div className="project-technologies">
+                    {project.technologies.map((tech, index) => (
+                      <span key={index} className="tech-tag" translate="no">{tech}</span>
+                    ))}
                   </div>
                 </div>
-                {project.featured && <span className="featured-badge">{t('featured')}</span>}
               </div>
-              
-              <div className="project-content">
-                <h3 className="project-title">{project.title}</h3>
-                <p className="project-description">{project.description}</p>
-                
-                <div className="project-technologies">
-                  {project.technologies.map((tech, index) => (
-                    <span key={index} className="tech-tag" translate="no">{tech}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
+            </SwiperSlide>
           ))}
-        </div>
+        </Swiper>
 
         <div className="projects-cta">
           <p>{language === 'es' ? '¿Te interesa ver más proyectos?' : 'Interested in seeing more projects?'}</p>
