@@ -47,6 +47,13 @@ export const translations = {
     liveDemo: 'Live Demo',
     moreProjects: 'View more projects',
     featured: 'Featured',
+    openNewTab: 'Open in new tab',
+    closeModal: 'Close',
+    githubRepository: 'GitHub Repository',
+    externalContent: 'External Content',
+    githubDescription: 'You will be redirected to the full repository where you can explore the source code, commits, documentation and project details.',
+    externalContentDescription: 'You will be redirected to a new tab to view the full content.',
+    viewOnGithub: 'View on GitHub',
     
     // Project descriptions
     frontendProject: 'Web application developed with Angular, TypeScript and Bootstrap. Includes dynamic navigation, reusable components and responsive design.',
@@ -130,6 +137,13 @@ export const translations = {
     liveDemo: 'Demo en Vivo',
     moreProjects: 'Ver más proyectos',
     featured: 'Destacado',
+    openNewTab: 'Abrir en nueva pestaña',
+    closeModal: 'Cerrar',
+    githubRepository: 'Repositorio de GitHub',
+    externalContent: 'Contenido Externo',
+    githubDescription: 'Serás redirigido al repositorio completo donde podrás explorar el código fuente, commits, documentación y detalles del proyecto.',
+    externalContentDescription: 'Serás redirigido a una nueva pestaña para visualizar el contenido completo.',
+    viewOnGithub: 'Ver en GitHub',
     
     // Project descriptions
     frontendProject: 'Aplicación web desarrollada con Angular, TypeScript y Bootstrap. Incluye navegación dinámica, componentes reutilizables y diseño responsivo.',

@@ -5,6 +5,7 @@ import 'swiper/css'
 import 'swiper/css/pagination'
 import './Projects.css'
 import { useTranslations } from '../../hooks/useTranslations'
+import Modal from '../Modal/Modal'
 import frontendProyecto3 from '../../assets/images/projects/FrontendProyecto3.webp'
 import crudProyecto3 from '../../assets/images/projects/CrudProyecto3.webp'
 import simpleGraphQL from '../../assets/images/projects/SimpleGraphQL.webp'
@@ -13,6 +14,12 @@ import chess3D from '../../assets/images/projects/chess3D.webp'
 
 const Projects = () => {
   const [filter, setFilter] = useState('all')
+  const [modalState, setModalState] = useState({
+    isOpen: false,
+    url: '',
+    title: '',
+    type: '' // 'demo' or 'code'
+  })
   const { t, language } = useTranslations()
   
   const projects = [
@@ -56,7 +63,7 @@ const Projects = () => {
       image: simpleGraphQL,
       technologies: ["Java", "Spring Boot", "GraphQL", "Maven"],
       category: "backend",
-      demoUrl: "#",
+      demoUrl: "https://github.com/LuisCarlosP/SimpleGraphQL",
       codeUrl: "https://github.com/LuisCarlosP/SimpleGraphQL",
       featured: false
     },
@@ -85,6 +92,24 @@ const Projects = () => {
   const filteredProjects = filter === 'all' 
     ? projects 
     : projects.filter(project => project.category === filter)
+
+  const openModal = (url, title, type) => {
+    setModalState({
+      isOpen: true,
+      url,
+      title,
+      type
+    })
+  }
+
+  const closeModal = () => {
+    setModalState({
+      isOpen: false,
+      url: '',
+      title: '',
+      type: ''
+    })
+  }
 
   return (
     <section id="proyectos" className="projects">
@@ -140,22 +165,18 @@ const Projects = () => {
                   <img src={project.image} alt={project.title} />
                   <div className="project-overlay">
                     <div className="project-links">
-                      <a 
-                        href={project.demoUrl} 
+                      <button 
                         className="btn btn-small btn-primary"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        onClick={() => openModal(project.demoUrl, `${project.title} - ${t('liveDemo')}`, 'demo')}
                       >
                         {t('liveDemo')}
-                      </a>
-                      <a 
-                        href={project.codeUrl} 
+                      </button>
+                      <button 
                         className="btn btn-small btn-outline"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        onClick={() => openModal(project.codeUrl, `${project.title} - ${t('viewCode')}`, 'code')}
                       >
                         {t('viewCode')}
-                      </a>
+                      </button>
                     </div>
                   </div>
                   {project.featured && <span className="featured-badge">{t('featured')}</span>}
@@ -188,6 +209,14 @@ const Projects = () => {
           </a>
         </div>
       </div>
+
+      <Modal
+        isOpen={modalState.isOpen}
+        onClose={closeModal}
+        title={modalState.title}
+        url={modalState.url}
+        type={modalState.type}
+      />
     </section>
   )
 }

@@ -65,10 +65,6 @@ const Footer = () => {
           <div className="footer-copyright">
             <p>&copy; {currentYear} Luis Carlos Picado. {t('allRightsReserved')}.</p>
           </div>
-          
-          <button className="scroll-to-top" onClick={scrollToTop} aria-label={t('backToTop')}>
-            ↑
-          </button>
         </div>
       </div>
     </footer>
