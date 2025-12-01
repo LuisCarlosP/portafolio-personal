@@ -50,9 +50,9 @@ const Projects = () => {
       title: "TrashIA",
       description: t('trashIAProject'),
       image: trashIA,
-      technologies: ["Java", "Spring Boot", "Python", "Gradle", "FastAPI"],
+      technologies: ["React", "Python", "FastAPI", "TensorFlow"],
       category: "fullstack",
-      demoUrl: "https://youtu.be/w1eLc3p4GKQ",
+      demoUrl: "https://luiscarlosp.github.io/TrashIAFrontend/",
       codeUrl: "https://github.com/LuisCarlosP/TrashIA",
       featured: true
     },
