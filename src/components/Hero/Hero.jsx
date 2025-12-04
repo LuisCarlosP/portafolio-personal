@@ -8,14 +8,14 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
   const { t, language } = useTranslations()
-  
+
   const getTexts = () => {
     if (language === 'es') {
-      return ['Estudiante de Programación', 'Java Developer', 'React Developer', 'Desarrollador Junior']
+      return ['Estudiante de Programación', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer']
     }
-    return ['Programming Student', 'Java Developer', 'React Developer', 'Junior Developer']
+    return ['Programming Student', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer']
   }
-  
+
   const texts = getTexts()
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const Hero = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       const current = texts[currentIndex]
-      
+
       if (isDeleting) {
         setCurrentText(current.substring(0, currentText.length - 1))
       } else {
@@ -68,14 +68,14 @@ const Hero = () => {
               {t('heroDescription')}
             </p>
             <div className="hero-buttons">
-              <button 
+              <button
                 className="btn btn-primary"
                 onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 <span className="btn-text">{t('viewProjects')}</span>
                 <i className="fas fa-arrow-right btn-icon"></i>
               </button>
-              <a 
+              <a
                 href={`${import.meta.env.BASE_URL}documents/CV_Luis_Carlos_Picado_Rojas.pdf`}
                 download="CV_Luis_Carlos_Picado.pdf"
                 className="btn btn-secondary"
@@ -95,14 +95,14 @@ const Hero = () => {
               </div>
               <div className="floating-card card-2">
                 <div className="card-content">
-                  <i className="fab fa-react card-icon"></i>
-                  <span className="card-text">React</span>
+                  <i className="fas fa-paint-brush card-icon"></i>
+                  <span className="card-text">Frontend</span>
                 </div>
               </div>
               <div className="floating-card card-3">
                 <div className="card-content">
-                  <i className="fab fa-java card-icon"></i>
-                  <span className="card-text">Java</span>
+                  <i className="fas fa-server card-icon"></i>
+                  <span className="card-text">Backend</span>
                 </div>
               </div>
               <div className="floating-card card-4">
