@@ -59,7 +59,7 @@ export const translations = {
     frontendProject: 'Web application developed with Angular, TypeScript and Bootstrap. Includes dynamic navigation, reusable components and responsive design.',
     crudProject: 'Complete REST API developed with Spring Boot and Gradle. Implements CRUD operations with layered architecture and best practices.',
     graphqlProject: 'GraphQL server developed with Spring Boot and Maven. Demonstrates efficient and flexible queries for modern APIs.',
-    trashIAProject: 'AI model trained by me with over 3,000 waste images. React frontend and Python backend with FastAPI. While not 100% accurate, it delivers quite precise waste classification results.',
+    trashIAProject: 'Waste classifier trained with more than 3,000 images. Frontend built with React and backend with FastAPI (Python). High practical performance in identifying and classifying materials.',
     chess3DProject: 'Interactive 3D chess game built with React and Three.js. Features realistic 3D graphics, complete chess logic with chess.js, and an immersive gaming experience.',
     
     // Contact
@@ -149,7 +149,7 @@ export const translations = {
     frontendProject: 'Aplicación web desarrollada con Angular, TypeScript y Bootstrap. Incluye navegación dinámica, componentes reutilizables y diseño responsivo.',
     crudProject: 'API REST completa desarrollada con Spring Boot y Gradle. Implementa operaciones CRUD con arquitectura en capas y buenas prácticas.',
     graphqlProject: 'Servidor GraphQL desarrollado con Spring Boot y Maven. Demuestra consultas eficientes y flexibles para APIs modernas.',
-    trashIAProject: 'Modelo de IA entrenado por mí con más de 3,000 imágenes de basura. Frontend en React y backend en Python con FastAPI. No tiene un 100% de precisión, sin embargo es bastante preciso en la clasificación de residuos.',
+    trashIAProject: 'Clasificador de residuos entrenado con más de 3,000 imágenes. Frontend en React y backend en FastAPI (Python). Alto rendimiento práctico en la identificación y clasificación de materiales.',
     chess3DProject: 'Juego de ajedrez 3D interactivo construido con React y Three.js. Presenta gráficos 3D realistas, lógica completa de ajedrez con chess.js y una experiencia de juego inmersiva.',
     
     // Contact
