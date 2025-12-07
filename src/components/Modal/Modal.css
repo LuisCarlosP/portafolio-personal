@@ -269,7 +269,7 @@
   }
 
   .modal-info-description {
-    font-size: 0.95rem;
+    display: none;
   }
 
   .modal-project-description {
