@@ -25,9 +25,9 @@ const Skills = () => {
       id: 'backend',
       icon: 'fas fa-server',
       skills: [
-        { name: "Java", level: 85, icon: "fab fa-java" },
+        { name: "Java", level: 90, icon: "fab fa-java" },
         { name: "C#", level: 70, icon: "fas fa-code" },
-        { name: "Python", level: 75, icon: "fab fa-python" },
+        { name: "Python", level: 90, icon: "fab fa-python" },
         { name: "Node.js", level: 70, icon: "fab fa-node-js" },
         { name: "ASP.NET", level: 65, icon: "fab fa-microsoft" },
         { name: "GraphQL", level: 60, icon: "fas fa-project-diagram" }

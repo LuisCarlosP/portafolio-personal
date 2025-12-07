@@ -12,13 +12,13 @@ const About = () => {
           <h2 className="section-title">{t('aboutTitle')}</h2>
           <p className="section-subtitle">{t('aboutSubtitle')}</p>
         </div>
-        
+
         <div className="about-content">
           <div className="about-image">
             <div className="image-wrapper">
-              <img 
-                src={profileImage} 
-                alt="Luis Carlos Picado - Estudiante de Desarrollo de Software" 
+              <img
+                src={profileImage}
+                alt="Luis Carlos Picado - Software Architect"
                 className="profile-image"
                 width="320"
                 height="320"
@@ -27,7 +27,7 @@ const About = () => {
               <div className="image-overlay"></div>
             </div>
           </div>
-          
+
           <div className="about-text">
             <h3>{t('aboutRole')}</h3>
             <p>
@@ -36,7 +36,7 @@ const About = () => {
             <p>
               {t('aboutDescription2')}
             </p>
-            
+
             <div className="stats">
               <div className="stat">
                 <span className="stat-number">10+</span>
@@ -47,13 +47,13 @@ const About = () => {
                 <span className="stat-label">{t('studyingYear')}</span>
               </div>
               <div className="stat">
-                <span className="stat-number">18+</span>
+                <span className="stat-number">20+</span>
                 <span className="stat-label">{t('technologiesLearned')}</span>
               </div>
             </div>
-            
+
             <div className="about-actions">
-              <a 
+              <a
                 href={`${import.meta.env.BASE_URL}documents/CV_Luis_Carlos_Picado_Rojas.pdf`}
                 download="CV_Luis_Carlos_Picado.pdf"
                 className="btn btn-primary"

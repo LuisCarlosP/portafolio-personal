@@ -11,9 +11,9 @@ const Hero = () => {
 
   const getTexts = () => {
     if (language === 'es') {
-      return ['Estudiante de Programación', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer']
+      return ['Arquitecto de Software', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer']
     }
-    return ['Programming Student', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer']
+    return ['Software Architect', 'Full Stack Developer', 'Frontend Developer', 'Backend Developer']
   }
 
   const texts = getTexts()

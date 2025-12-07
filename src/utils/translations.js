@@ -10,17 +10,17 @@ export const translations = {
 
     // Hero
     heroTitle: 'Hi, I\'m',
-    heroSubtitle: 'Systems Engineering Student',
-    heroDescription: 'Software development student focused on full-stack web development. Passionate about learning and creating innovative solutions with modern technologies and best practices.',
+    heroSubtitle: 'Software Architect',
+    heroDescription: 'Software Architect specializing in full-stack development. I design scalable solutions applying SOLID principles, design patterns and clean architectures.',
     downloadCV: 'Download CV',
     viewProjects: 'View Projects',
 
     // About
     aboutTitle: 'About Me',
     aboutSubtitle: 'Learn more about my background and goals',
-    aboutRole: 'Software Development Student',
-    aboutDescription1: 'I\'m Luis Carlos Picado, a passionate software development student focused on full-stack web development. I\'m currently learning and perfecting my skills in backend architectures and frontend frameworks, creating personal projects to apply the knowledge I\'ve acquired.',
-    aboutDescription2: 'My training focuses on modern web application development, RESTful APIs, responsive user interfaces, and programming best practices. I constantly seek to learn new technologies and methodologies to become a complete developer and contribute to meaningful projects.',
+    aboutRole: 'Software Architect',
+    aboutDescription1: 'I\'m Luis Carlos Picado, a Software Architect specializing in full-stack development. I design and build RESTful APIs following Clean Architecture principles, implement Machine Learning models and neural networks, and create modern, responsive user interfaces.',
+    aboutDescription2: 'My experience spans from modern web application development to third-party service integrations and databases. I apply robust security (authentication, rate limiting, circuit breakers), agile methodologies, automated testing and technical documentation to ensure maintainable, high-quality code.',
     learningProjects: 'Learning Projects',
     studyingYear: 'Years Studying',
     technologiesLearned: 'Technologies Learned',
@@ -29,7 +29,7 @@ export const translations = {
     // Skills
     skillsTitle: 'Skills',
     skillsSubtitle: 'Technologies and tools I master',
-    skillsSummary: 'As a full-stack development student, I work with backend architectures and frontend frameworks, complemented with relational databases and modern development tools.',
+    skillsSummary: 'Software Architect with experience in backend, frontend, Machine Learning and databases development. Focused on security, automated testing, design patterns and scalable architectures.',
     frontend: 'Frontend',
     backend: 'Backend',
     databasesTools: 'Databases & Tools',
@@ -73,7 +73,7 @@ export const translations = {
     contactTitle: 'Contact',
     contactSubtitle: 'Get in touch with me',
     contactInfo: 'Contact Information & Details',
-    contactDescription: 'Available for job opportunities, internships, and development projects. Student specialized in full-stack web development.',
+    contactDescription: 'Available for job opportunities and development projects. Software Architect with expertise in RESTful APIs, scalable architectures and system integrations.',
     email: 'Email',
     phone: 'Phone',
     location: 'Location',
@@ -89,7 +89,7 @@ export const translations = {
     messageError: 'Error sending message. Please try again.',
 
     // Footer
-    footerDescription: 'Systems Engineering student specialized in Full-Stack web development. Passionate about learning new technologies and creating innovative solutions.',
+    footerDescription: 'Software Architect specializing in Full-Stack development. Focused on scalable architectures, security and development best practices.',
     quickLinks: 'Quick Links',
     techStack: 'Tech Stack',
     allRightsReserved: 'All rights reserved',
@@ -107,17 +107,17 @@ export const translations = {
 
     // Hero
     heroTitle: 'Hola, soy',
-    heroSubtitle: 'Estudiante de Ingeniería en Sistemas',
-    heroDescription: 'Estudiante de desarrollo de software enfocado en desarrollo web full-stack. Apasionado por aprender y crear soluciones innovadoras con tecnologías modernas y mejores prácticas.',
+    heroSubtitle: 'Arquitecto de Software',
+    heroDescription: 'Arquitecto de Software especializado en desarrollo full-stack. Diseño soluciones escalables aplicando principios SOLID, patrones de diseño y arquitecturas limpias.',
     downloadCV: 'Descargar CV',
     viewProjects: 'Ver Proyectos',
 
     // About
     aboutTitle: 'Acerca de mí',
     aboutSubtitle: 'Conoce un poco más sobre mi formación y objetivos',
-    aboutRole: 'Estudiante de Desarrollo de Software',
-    aboutDescription1: 'Soy Luis Carlos Picado, estudiante apasionado por el desarrollo de software con enfoque en desarrollo web full-stack. Actualmente me encuentro aprendiendo y perfeccionando mis habilidades en arquitecturas backend y frameworks frontend, creando proyectos personales para aplicar los conocimientos adquiridos.',
-    aboutDescription2: 'Mi formación se centra en desarrollo de aplicaciones web modernas, APIs RESTful, interfaces de usuario responsivas y buenas prácticas de programación. Busco constantemente aprender nuevas tecnologías y metodologías para convertirme en un desarrollador completo y contribuir en proyectos significativos.',
+    aboutRole: 'Arquitecto de Software',
+    aboutDescription1: 'Soy Luis Carlos Picado, Arquitecto de Software especializado en desarrollo full-stack. Diseño y desarrollo APIs RESTful siguiendo principios de Clean Architecture, implemento modelos de Machine Learning y redes neuronales, y construyo interfaces de usuario modernas y responsivas.',
+    aboutDescription2: 'Mi experiencia abarca desde el desarrollo de aplicaciones web modernas hasta la integración de servicios externos y bases de datos. Aplico seguridad robusta (autenticación, rate limiting, circuit breakers), metodologías ágiles, testing automatizado y documentación técnica para garantizar código mantenible y de alta calidad.',
     learningProjects: 'Proyectos de Aprendizaje',
     studyingYear: 'Años Estudiando',
     technologiesLearned: 'Tecnologías Aprendidas',
@@ -126,7 +126,7 @@ export const translations = {
     // Skills
     skillsTitle: 'Habilidades',
     skillsSubtitle: 'Tecnologías y herramientas que domino',
-    skillsSummary: 'Como estudiante de desarrollo full-stack, trabajo con arquitecturas backend y frameworks frontend, complementando con bases de datos relacionales y herramientas de desarrollo modernas.',
+    skillsSummary: 'Arquitecto de Software con experiencia en desarrollo backend, frontend, Machine Learning y bases de datos. Enfocado en seguridad, testing automatizado, patrones de diseño y arquitecturas escalables.',
     frontend: 'Frontend',
     backend: 'Backend',
     databasesTools: 'Bases de Datos y Herramientas',
@@ -170,7 +170,7 @@ export const translations = {
     contactTitle: 'Contacto',
     contactSubtitle: 'Ponte en contacto conmigo',
     contactInfo: 'Información de Contacto y Detalles',
-    contactDescription: 'Disponible para oportunidades laborales, prácticas profesionales y proyectos de desarrollo. Estudiante especializado en desarrollo web full-stack.',
+    contactDescription: 'Disponible para oportunidades laborales y proyectos de desarrollo. Arquitecto de Software con experiencia en APIs RESTful, arquitecturas escalables e integraciones de sistemas.',
     email: 'Email',
     phone: 'Teléfono',
     location: 'Ubicación',
@@ -186,7 +186,7 @@ export const translations = {
     messageError: 'Error al enviar mensaje. Por favor intenta de nuevo.',
 
     // Footer
-    footerDescription: 'Estudiante de Ingeniería en Sistemas especializado en desarrollo web Full-Stack. Apasionado por aprender nuevas tecnologías y crear soluciones innovadoras.',
+    footerDescription: 'Arquitecto de Software especializado en desarrollo Full-Stack. Enfocado en arquitecturas escalables, seguridad y buenas prácticas de desarrollo.',
     quickLinks: 'Enlaces Rápidos',
     techStack: 'Stack Tecnológico',
     allRightsReserved: 'Todos los derechos reservados',
