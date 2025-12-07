@@ -9,7 +9,7 @@
   gap: 3rem;
   max-width: 1400px;
   margin: 0 auto;
-  align-items: start;
+  align-items: stretch;
 }
 
 .contact-info-section {
@@ -275,6 +275,7 @@
     opacity: 0;
     transform: translateY(-10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -304,25 +305,25 @@
     gap: 2rem;
     align-items: stretch;
   }
-  
+
   .contact-info-section,
   .contact-form-container {
     padding: 2rem 1.5rem;
     height: auto;
   }
-  
+
   .contact-description h3,
   .contact-form-container h3 {
     font-size: 1.5rem;
     margin-bottom: 0.75rem;
   }
-  
+
   .contact-description p,
   .form-description {
     font-size: 0.95rem;
     margin-bottom: 1.5rem;
   }
-  
+
   .contact-items {
     gap: 0.75rem;
     margin-bottom: 1.5rem;
@@ -331,7 +332,7 @@
   .contact-item {
     padding: 1rem;
   }
-  
+
   .contact-icon {
     font-size: 1.4rem;
     width: 40px;
@@ -342,7 +343,7 @@
   .contact-title {
     font-size: 0.9rem;
   }
-  
+
   .contact-value {
     font-size: 0.95rem;
   }
@@ -355,7 +356,7 @@
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
-  
+
   .social-link {
     padding: 0.9rem 1.5rem;
     min-width: 140px;
@@ -369,7 +370,7 @@
   .contact-form {
     gap: 1.25rem;
   }
-  
+
   .form-input,
   .form-textarea {
     padding: 0.85rem 1.15rem;
@@ -379,7 +380,7 @@
   .form-textarea {
     min-height: 100px;
   }
-  
+
   .form-submit {
     padding: 0.85rem 1.5rem;
     font-size: 0.95rem;
@@ -404,21 +405,21 @@
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .contact-info-section,
   .contact-form-container {
     padding: 2rem 1.5rem;
   }
-  
+
   .contact-description h3 {
     font-size: 1.5rem;
   }
-  
+
   .social-links {
     flex-direction: row;
     gap: 1rem;
   }
-  
+
   .social-link {
     flex: 1;
     min-width: 140px;
@@ -433,12 +434,12 @@
     text-align: center;
     padding: 1.5rem 1rem;
   }
-  
+
   .contact-icon {
     margin-right: 0;
     margin-bottom: 1rem;
   }
-  
+
   .social-link {
     min-width: 130px;
     max-width: 160px;
@@ -452,11 +453,11 @@
     padding: 0.75rem;
     border-radius: 50%;
   }
-  
+
   .social-link span {
     display: none;
   }
-  
+
   .social-link i {
     margin: 0;
   }
