@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import './Modal.css'
 import { useTranslations } from '../../hooks/useTranslations'
 
-const Modal = ({ isOpen, onClose, title, url, type }) => {
+const Modal = ({ isOpen, onClose, title, url, type, codeDescription }) => {
   const { t, language } = useTranslations()
-  
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape') {
@@ -36,7 +36,7 @@ const Modal = ({ isOpen, onClose, title, url, type }) => {
   const getEmbedUrl = () => {
     if (isYouTube) {
       // Convertir URL de YouTube a formato embed
-      const videoId = url.includes('youtu.be') 
+      const videoId = url.includes('youtu.be')
         ? url.split('youtu.be/')[1]?.split('?')[0]
         : url.split('v=')[1]?.split('&')[0]
       return videoId ? `https://www.youtube.com/embed/${videoId}` : url
@@ -54,6 +54,29 @@ const Modal = ({ isOpen, onClose, title, url, type }) => {
     return null
   }
 
+  // Parse simple markdown formatting (bold and line breaks)
+  const formatDescription = (text) => {
+    if (!text) return null
+
+    return text.split('\n').map((line, index) => {
+      // Parse **bold** text
+      const parts = line.split(/(\*\*[^*]+\*\*)/)
+      const formattedLine = parts.map((part, partIndex) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+          return <strong key={partIndex}>{part.slice(2, -2)}</strong>
+        }
+        return part
+      })
+
+      return (
+        <span key={index}>
+          {formattedLine}
+          {index < text.split('\n').length - 1 && <br />}
+        </span>
+      )
+    })
+  }
+
   return (
     <div className="modal-overlay" onClick={handleBackdropClick}>
       <div className="modal-container">
@@ -66,30 +89,35 @@ const Modal = ({ isOpen, onClose, title, url, type }) => {
             </svg>
           </button>
         </div>
-        
+
         <div className="modal-content">
           {cannotEmbed && !isYouTube ? (
             <div className="modal-info">
               {getIcon()}
               <h3 className="modal-info-title">
-                {isGitHub 
+                {isGitHub
                   ? t('githubRepository')
                   : t('externalContent')
                 }
               </h3>
+              {codeDescription && (
+                <div className="modal-project-description">
+                  {formatDescription(codeDescription)}
+                </div>
+              )}
               <p className="modal-info-description">
-                {isGitHub 
+                {isGitHub
                   ? t('githubDescription')
                   : t('externalContentDescription')
                 }
               </p>
-              <a 
-                href={url} 
-                target="_blank" 
+              <a
+                href={url}
+                target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary btn-large"
               >
-                {isGitHub 
+                {isGitHub
                   ? t('viewOnGithub')
                   : t('openNewTab')
                 }
@@ -105,16 +133,18 @@ const Modal = ({ isOpen, onClose, title, url, type }) => {
             />
           )}
         </div>
-        
+
         <div className="modal-footer">
-          <a 
-            href={url} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-          >
-            {t('openNewTab')}
-          </a>
+          {!isGitHub && (
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+            >
+              {t('openNewTab')}
+            </a>
+          )}
           <button className="btn btn-outline" onClick={onClose}>
             {t('closeModal')}
           </button>

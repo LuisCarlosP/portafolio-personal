@@ -59,8 +59,15 @@ export const translations = {
     frontendProject: 'Web application developed with Angular, TypeScript and Bootstrap. Includes dynamic navigation, reusable components and responsive design.',
     crudProject: 'Complete REST API developed with Spring Boot and Gradle. Implements CRUD operations with layered architecture and best practices.',
     graphqlProject: 'GraphQL server developed with Spring Boot and Maven. Demonstrates efficient and flexible queries for modern APIs.',
-    trashIAProject: 'Waste classifier trained with more than 3,000 images. Frontend built with React and backend with FastAPI (Python). High practical performance in identifying and classifying materials.',
+    trashIAProject: 'AI-powered REST API for waste classification into 6 categories using TensorFlow. Features include AI chat (Gemini), barcode scanning for recyclability, and recycling point location via OpenStreetMap. Built with React frontend and FastAPI backend.',
     chess3DProject: 'Interactive 3D chess game built with React and Three.js. Features realistic 3D graphics, complete chess logic with chess.js, and an immersive gaming experience.',
+
+    // Project detailed descriptions (for View Code modal)
+    trashIACodeDescription: 'TrashIA is a full-stack AI application for waste classification and recycling assistance.\n\n**Features:**\n• Image classification into 6 categories (cardboard, glass, metal, paper, plastic, trash) using TensorFlow\n• AI-powered chat assistant with Google Gemini for recycling queries\n• Barcode scanning for product recyclability information\n• Recycling point location search using OpenStreetMap\n• Multi-language support (English/Spanish)\n\n**Security:**\n• API Key authentication\n• Redis-based rate limiting\n• Circuit breakers for external APIs\n\n**Tech Stack:**\n• Frontend: React, TypeScript\n• Backend: FastAPI, Python 3.11\n• ML: TensorFlow, Keras\n• Database: Redis\n• APIs: Google Gemini, OpenStreetMap, OpenFoodFacts',
+    frontendProjectCodeDescription: 'Angular web application with modern architecture and best practices.\n\n**Features:**\n• Dynamic routing and navigation\n• Reusable component library\n• Responsive design with Bootstrap\n• TypeScript for type safety',
+    crudProjectCodeDescription: 'Complete REST API built with Spring Boot demonstrating enterprise-level architecture.\n\n**Features:**\n• Full CRUD operations\n• Layered architecture (Controller, Service, Repository)\n• JWT authentication\n• CORS configuration\n• Gradle build system',
+    graphqlProjectCodeDescription: 'GraphQL API server showcasing modern API design patterns.\n\n**Features:**\n• Efficient data fetching with GraphQL queries\n• Flexible schema design\n• Spring Boot integration\n• Maven project structure',
+    chess3DCodeDescription: 'Immersive 3D chess experience built with modern web technologies.\n\n**Features:**\n• Realistic 3D graphics with Three.js\n• Complete chess logic with chess.js library\n• Interactive 3D board and pieces\n• Smooth animations and camera controls',
 
     // Contact
     contactTitle: 'Contact',
@@ -149,8 +156,15 @@ export const translations = {
     frontendProject: 'Aplicación web desarrollada con Angular, TypeScript y Bootstrap. Incluye navegación dinámica, componentes reutilizables y diseño responsivo.',
     crudProject: 'API REST completa desarrollada con Spring Boot y Gradle. Implementa operaciones CRUD con arquitectura en capas y buenas prácticas.',
     graphqlProject: 'Servidor GraphQL desarrollado con Spring Boot y Maven. Demuestra consultas eficientes y flexibles para APIs modernas.',
-    trashIAProject: 'Clasificador de residuos entrenado con más de 3,000 imágenes. Frontend en React y backend en FastAPI (Python). Alto rendimiento práctico en la identificación y clasificación de materiales.',
+    trashIAProject: 'API REST con IA para clasificación de residuos en 6 categorías usando TensorFlow. Incluye chat IA (Gemini), escaneo de códigos de barras para reciclabilidad, y ubicación de puntos de reciclaje vía OpenStreetMap. Frontend en React y backend en FastAPI.',
     chess3DProject: 'Juego de ajedrez 3D interactivo construido con React y Three.js. Presenta gráficos 3D realistas, lógica completa de ajedrez con chess.js y una experiencia de juego inmersiva.',
+
+    // Project detailed descriptions (for View Code modal)
+    trashIACodeDescription: 'TrashIA es una aplicación full-stack con IA para clasificación de residuos y asistencia de reciclaje.\n\n**Características:**\n• Clasificación de imágenes en 6 categorías (cartón, vidrio, metal, papel, plástico, basura) usando TensorFlow\n• Asistente de chat con IA usando Google Gemini para consultas de reciclaje\n• Escaneo de códigos de barras para información de reciclabilidad\n• Búsqueda de puntos de reciclaje usando OpenStreetMap\n• Soporte multi-idioma (Inglés/Español)\n\n**Seguridad:**\n• Autenticación con API Key\n• Rate limiting con Redis\n• Circuit breakers para APIs externas\n\n**Stack Tecnológico:**\n• Frontend: React, TypeScript\n• Backend: FastAPI, Python 3.11\n• ML: TensorFlow, Keras\n• Base de datos: Redis\n• APIs: Google Gemini, OpenStreetMap, OpenFoodFacts',
+    frontendProjectCodeDescription: 'Aplicación web Angular con arquitectura moderna y mejores prácticas.\n\n**Características:**\n• Enrutamiento y navegación dinámica\n• Biblioteca de componentes reutilizables\n• Diseño responsivo con Bootstrap\n• TypeScript para tipado seguro',
+    crudProjectCodeDescription: 'API REST completa construida con Spring Boot demostrando arquitectura empresarial.\n\n**Características:**\n• Operaciones CRUD completas\n• Arquitectura en capas (Controller, Service, Repository)\n• Autenticación JWT\n• Configuración CORS\n• Sistema de build con Gradle',
+    graphqlProjectCodeDescription: 'Servidor API GraphQL mostrando patrones de diseño de APIs modernas.\n\n**Características:**\n• Obtención eficiente de datos con consultas GraphQL\n• Diseño de esquema flexible\n• Integración con Spring Boot\n• Estructura de proyecto con Maven',
+    chess3DCodeDescription: 'Experiencia de ajedrez 3D inmersiva construida con tecnologías web modernas.\n\n**Características:**\n• Gráficos 3D realistas con Three.js\n• Lógica completa de ajedrez con librería chess.js\n• Tablero y piezas 3D interactivas\n• Animaciones suaves y controles de cámara',
 
     // Contact
     contactTitle: 'Contacto',

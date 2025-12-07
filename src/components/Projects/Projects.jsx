@@ -18,10 +18,11 @@ const Projects = () => {
     isOpen: false,
     url: '',
     title: '',
-    type: '' // 'demo' or 'code'
+    type: '', // 'demo' or 'code'
+    codeDescription: ''
   })
   const { t, language } = useTranslations()
-  
+
   const projects = [
     {
       id: 1,
@@ -32,6 +33,7 @@ const Projects = () => {
       category: "frontend",
       demoUrl: "https://www.youtube.com/watch?v=whnM4r6fZGU",
       codeUrl: "https://github.com/LuisCarlosP/FrontEndProyecto3",
+      codeDescriptionKey: "frontendProjectCodeDescription",
       featured: false
     },
     {
@@ -43,6 +45,7 @@ const Projects = () => {
       category: "backend",
       demoUrl: "https://www.youtube.com/watch?v=whnM4r6fZGU",
       codeUrl: "https://github.com/LuisCarlosP/CRUDProyecto3",
+      codeDescriptionKey: "crudProjectCodeDescription",
       featured: false
     },
     {
@@ -54,6 +57,7 @@ const Projects = () => {
       category: "fullstack",
       demoUrl: "https://luiscarlosp.github.io/TrashIAFrontend/",
       codeUrl: "https://github.com/LuisCarlosP/TrashIA",
+      codeDescriptionKey: "trashIACodeDescription",
       featured: true
     },
     {
@@ -65,6 +69,7 @@ const Projects = () => {
       category: "backend",
       demoUrl: "https://github.com/LuisCarlosP/SimpleGraphQL",
       codeUrl: "https://github.com/LuisCarlosP/SimpleGraphQL",
+      codeDescriptionKey: "graphqlProjectCodeDescription",
       featured: false
     },
     {
@@ -76,6 +81,7 @@ const Projects = () => {
       category: "frontend",
       demoUrl: "https://luiscarlosp.github.io/chess-3d/",
       codeUrl: "https://github.com/LuisCarlosP/chess-3d",
+      codeDescriptionKey: "chess3DCodeDescription",
       featured: false
     }
   ]
@@ -89,16 +95,17 @@ const Projects = () => {
 
   const categories = getCategories()
 
-  const filteredProjects = filter === 'all' 
-    ? projects 
+  const filteredProjects = filter === 'all'
+    ? projects
     : projects.filter(project => project.category === filter)
 
-  const openModal = (url, title, type) => {
+  const openModal = (url, title, type, codeDescription = '') => {
     setModalState({
       isOpen: true,
       url,
       title,
-      type
+      type,
+      codeDescription
     })
   }
 
@@ -107,7 +114,8 @@ const Projects = () => {
       isOpen: false,
       url: '',
       title: '',
-      type: ''
+      type: '',
+      codeDescription: ''
     })
   }
 
@@ -165,15 +173,15 @@ const Projects = () => {
                   <img src={project.image} alt={project.title} />
                   <div className="project-overlay">
                     <div className="project-links">
-                      <button 
+                      <button
                         className="btn btn-small btn-primary"
                         onClick={() => openModal(project.demoUrl, `${project.title} - ${t('liveDemo')}`, 'demo')}
                       >
                         {t('liveDemo')}
                       </button>
-                      <button 
+                      <button
                         className="btn btn-small btn-outline"
-                        onClick={() => openModal(project.codeUrl, `${project.title} - ${t('viewCode')}`, 'code')}
+                        onClick={() => openModal(project.codeUrl, `${project.title} - ${t('viewCode')}`, 'code', t(project.codeDescriptionKey))}
                       >
                         {t('viewCode')}
                       </button>
@@ -181,11 +189,11 @@ const Projects = () => {
                   </div>
                   {project.featured && <span className="featured-badge">{t('featured')}</span>}
                 </div>
-                
+
                 <div className="project-content">
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-description">{project.description}</p>
-                  
+
                   <div className="project-technologies">
                     {project.technologies.map((tech, index) => (
                       <span key={index} className="tech-tag" translate="no">{tech}</span>
@@ -199,8 +207,8 @@ const Projects = () => {
 
         <div className="projects-cta">
           <p>{language === 'es' ? '¿Te interesa ver más proyectos?' : 'Interested in seeing more projects?'}</p>
-          <a 
-            href="https://github.com/LuisCarlosP" 
+          <a
+            href="https://github.com/LuisCarlosP"
             className="btn btn-outline"
             target="_blank"
             rel="noopener noreferrer"
@@ -216,6 +224,7 @@ const Projects = () => {
         title={modalState.title}
         url={modalState.url}
         type={modalState.type}
+        codeDescription={modalState.codeDescription}
       />
     </section>
   )

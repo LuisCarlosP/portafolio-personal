@@ -19,6 +19,7 @@
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -31,8 +32,8 @@
   border: 2px solid rgba(16, 185, 129, 0.3);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 100px rgba(16, 185, 129, 0.2);
   width: 100%;
-  max-width: 1200px;
-  max-height: 90vh;
+  max-width: 700px;
+  max-height: 85vh;
   display: flex;
   flex-direction: column;
   animation: slideUp 0.3s ease;
@@ -43,6 +44,7 @@
     transform: translateY(50px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -86,10 +88,10 @@
 
 .modal-content {
   flex: 1;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -103,49 +105,71 @@
 
 .modal-info {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  max-width: 600px;
+  gap: 1rem;
+  width: 100%;
 }
 
 .modal-icon {
   color: var(--color-primary);
   opacity: 0.8;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   animation: pulse 2s ease-in-out infinite;
-  font-size: 80px;
+  font-size: 50px;
 }
 
 @keyframes pulse {
-  0%, 100% {
+
+  0%,
+  100% {
     opacity: 0.8;
   }
+
   50% {
     opacity: 1;
   }
 }
 
 .modal-info-title {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--color-text-primary);
   margin: 0;
 }
 
 .modal-info-description {
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
   margin: 0;
 }
 
+.modal-project-description {
+  text-align: left;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 12px;
+  padding: 1.25rem;
+  max-height: 250px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.modal-project-description strong {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
 .modal-info .btn-large {
-  padding: 1rem 2.5rem;
-  font-size: 1.1rem;
-  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
   background: var(--color-primary);
   color: white;
   border: 2px solid var(--color-primary);
@@ -246,6 +270,12 @@
 
   .modal-info-description {
     font-size: 0.95rem;
+  }
+
+  .modal-project-description {
+    font-size: 0.85rem;
+    max-height: 200px;
+    padding: 1rem;
   }
 
   .modal-iframe {
