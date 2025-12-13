@@ -12,8 +12,8 @@ const ThemeOutput = ({ theme, showList, onThemeChange }) => {
 
     const themes = [
         { id: 'dracula', name: 'Dracula', preview: ['#282a36', '#bd93f9', '#50fa7b'] },
-        { id: 'solarized', name: 'Solarized', preview: ['#fdf6e3', '#268bd2', '#859900'] },
-        { id: 'matrix', name: 'Matrix', preview: ['#0a0a0a', '#00ff00', '#00cc00'] },
+        { id: 'solarized', name: 'Solarized', preview: ['#002b36', '#268bd2', '#859900'] },
+        { id: 'matrix', name: 'Matrix', preview: ['#0d0d0d', '#33ff33', '#22cc22'] },
         { id: 'catppuccin', name: 'Catppuccin', preview: ['#1e1e2e', '#cba6f7', '#f5c2e7'] }
     ];
 

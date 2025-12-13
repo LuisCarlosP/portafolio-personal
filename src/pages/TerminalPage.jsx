@@ -44,7 +44,7 @@ const TerminalPage = () => {
         <div className="terminal-page" style={{
             height: 'var(--app-height, 100vh)',
             width: '100vw',
-            background: '#1a1b26',
+            background: 'var(--terminal-bg)',
             overflow: 'hidden',
             position: 'fixed',
             inset: 0

@@ -55,63 +55,63 @@
 }
 
 /* ========================================
-   THEME: SOLARIZED
+   THEME: SOLARIZED (Dark variant)
    ======================================== */
 [data-theme="solarized"] {
-  --terminal-bg: #eff1f5;
-  --terminal-bg-secondary: rgba(220, 224, 232, 0.6);
-  --terminal-header: #e6e9ef;
-  --terminal-border: #ccd0da;
+  --terminal-bg: #002b36;
+  --terminal-bg-secondary: rgba(7, 54, 66, 0.6);
+  --terminal-header: #073642;
+  --terminal-border: #586e75;
 
-  --text-primary: #4c4f69;
-  --text-secondary: #5c5f77;
-  --text-muted: #8c8fa1;
+  --text-primary: #839496;
+  --text-secondary: #93a1a1;
+  --text-muted: #657b83;
 
-  --accent-red: #d20f39;
-  --accent-yellow: #df8e1d;
-  --accent-green: #40a02b;
-  --accent-blue: #1e66f5;
-  --accent-cyan: #179299;
-  --accent-purple: #8839ef;
+  --accent-red: #dc322f;
+  --accent-yellow: #b58900;
+  --accent-green: #859900;
+  --accent-blue: #268bd2;
+  --accent-cyan: #2aa198;
+  --accent-purple: #6c71c4;
 
-  --prompt-user: #40a02b;
-  --prompt-host: #1e66f5;
-  --prompt-path: #8839ef;
-  --prompt-symbol: #df8e1d;
+  --prompt-user: #859900;
+  --prompt-host: #268bd2;
+  --prompt-path: #6c71c4;
+  --prompt-symbol: #b58900;
 }
 
 /* ========================================
    THEME: MATRIX
    ======================================== */
 [data-theme="matrix"] {
-  --terminal-bg: #0a0a0a;
-  --terminal-bg-secondary: rgba(0, 20, 0, 0.6);
-  --terminal-header: #050505;
-  --terminal-border: #003300;
+  --terminal-bg: #0d0d0d;
+  --terminal-bg-secondary: rgba(0, 30, 0, 0.5);
+  --terminal-header: #0a0a0a;
+  --terminal-border: #1a3d1a;
 
-  --text-primary: #00ff00;
-  --text-secondary: #00cc00;
-  --text-muted: #006600;
+  --text-primary: #33ff33;
+  --text-secondary: #22cc22;
+  --text-muted: #118811;
 
-  --accent-red: #ff0000;
-  --accent-yellow: #ccff00;
-  --accent-green: #00ff00;
-  --accent-blue: #00ffff;
-  --accent-cyan: #00ffcc;
-  --accent-purple: #ff00ff;
+  --accent-red: #ff4444;
+  --accent-yellow: #aaff00;
+  --accent-green: #33ff33;
+  --accent-blue: #00ddff;
+  --accent-cyan: #00ffaa;
+  --accent-purple: #dd44ff;
 
-  --prompt-user: #00ff00;
-  --prompt-host: #00ffff;
-  --prompt-path: #ff00ff;
-  --prompt-symbol: #ccff00;
+  --prompt-user: #33ff33;
+  --prompt-host: #00ddff;
+  --prompt-path: #dd44ff;
+  --prompt-symbol: #aaff00;
 }
 
 /* ========================================
-   THEME: CATPPUCCIN MOCHA (variant)
+   THEME: CATPPUCCIN MOCHA
    ======================================== */
 [data-theme="catppuccin"] {
   --terminal-bg: #1e1e2e;
-  --terminal-bg-secondary: rgba(49, 50, 68, 0.5);
+  --terminal-bg-secondary: rgba(30, 30, 46, 0.7);
   --terminal-header: #181825;
   --terminal-border: #45475a;
 
@@ -119,20 +119,19 @@
   --text-secondary: #bac2de;
   --text-muted: #6c7086;
 
-  /* Catppuccin signature: pink/mauve as primary accents */
   --accent-red: #f38ba8;
-  --accent-yellow: #fab387;
-  --accent-green: #f5c2e7;
-  --accent-blue: #89dceb;
+  --accent-yellow: #f9e2af;
+  --accent-green: #cba6f7;
+  --accent-blue: #89b4fa;
   --accent-cyan: #94e2d5;
-  --accent-purple: #cba6f7;
+  --accent-purple: #f5c2e7;
 
-  /* Pink/Mauve prompt colors - signature Catppuccin look */
-  --prompt-user: #f5c2e7;
+  /* Mauve/Pink prompt colors */
+  --prompt-user: #cba6f7;
   --prompt-at: #9399b2;
-  --prompt-host: #89dceb;
-  --prompt-path: #cba6f7;
-  --prompt-symbol: #fab387;
+  --prompt-host: #89b4fa;
+  --prompt-path: #f5c2e7;
+  --prompt-symbol: #f9e2af;
 }
 
 @media (max-width: 767px) {
