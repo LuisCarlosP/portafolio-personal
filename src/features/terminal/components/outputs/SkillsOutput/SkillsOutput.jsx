@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './SkillsOutput.css';
 
 const SkillsOutput = ({ categories }) => {
     const { t } = useTranslation();

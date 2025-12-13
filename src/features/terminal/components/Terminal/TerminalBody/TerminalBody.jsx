@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+import './TerminalBody.css';
+import '../../outputs/shared.css';
 
 const TerminalBody = ({ history, welcomeMessage }) => {
     const bodyRef = useRef(null);

@@ -1,0 +1,23 @@
+/* ========================================
+   HELP OUTPUT
+   ======================================== */
+
+.help-output {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    align-items: center;
+}
+
+
+.help-output__command {
+    color: var(--accent-yellow);
+    justify-self: start;
+    text-align: left;
+}
+
+.help-output__description {
+    color: var(--text-secondary);
+    justify-self: start;
+    text-align: left;
+}

@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faBriefcase, faCode, faGraduationCap } from '@fortawesome/free-solid-svg-icons';
+import './AboutOutput.css';
 
 const AboutOutput = () => {
     const { t } = useTranslation();

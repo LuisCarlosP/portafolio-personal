@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faCode } from '@fortawesome/free-solid-svg-icons';
+import './ProjectsOutput.css';
 
 const ProjectsOutput = ({ projects, onCommandClick }) => {
     const { t } = useTranslation();

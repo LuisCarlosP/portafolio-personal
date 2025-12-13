@@ -1,0 +1,22 @@
+/* ========================================
+   TERMINAL BODY
+   ======================================== */
+
+.terminal-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: var(--terminal-padding);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    scroll-behavior: smooth;
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 767px) {
+    .terminal-body {
+        padding-bottom: var(--terminal-padding);
+    }
+}

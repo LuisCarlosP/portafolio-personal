@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './HelpOutput.css';
 
 const HelpOutput = ({ onCommandClick }) => {
     const { t } = useTranslation();

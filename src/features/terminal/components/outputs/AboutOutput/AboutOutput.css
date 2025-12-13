@@ -1,0 +1,30 @@
+/* ========================================
+   ABOUT OUTPUT
+   ======================================== */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.stat {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid var(--terminal-border);
+    border-radius: 8px;
+    background: var(--terminal-bg-secondary);
+}
+
+.stat__number {
+    font-size: var(--font-size-lg);
+    color: var(--accent-green);
+    font-weight: 700;
+}
+
+.stat__label {
+    font-size: var(--font-size-xs);
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}

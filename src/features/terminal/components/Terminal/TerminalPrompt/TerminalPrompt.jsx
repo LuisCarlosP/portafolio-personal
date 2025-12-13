@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { availableCommands } from '../../utils/commandRegistry';
+import { availableCommands } from '../../../utils/commandRegistry';
+import './TerminalPrompt.css';
 
 const TerminalPrompt = ({
     value,

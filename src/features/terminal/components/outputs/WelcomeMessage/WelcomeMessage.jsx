@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './WelcomeMessage.css';
 
 const WelcomeMessage = () => {
     const { t } = useTranslation();
@@ -13,7 +14,7 @@ const WelcomeMessage = () => {
  | | | | | | / __| | |   / _\` | '__|| |/ _ \\/ __|
  | | |_| | | \\__ \\ | |__| (_| | |   | | (_) \\__ \\
  |_|\\__,_|_|_|___/  \\____\\__,_|_|   |_|\\___/|___/
-                                                 
+                                                  
 `}
             </pre>
             <div style={{ marginTop: '1rem' }}>

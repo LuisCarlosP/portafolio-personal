@@ -1,0 +1,24 @@
+/* ========================================
+   CONTACT OUTPUT
+   ======================================== */
+
+.contact-output {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-output__item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.contact-output__label {
+    color: var(--accent-yellow);
+    min-width: 80px;
+}
+
+.contact-output__value {
+    color: var(--text-primary);
+}

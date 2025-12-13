@@ -1,0 +1,118 @@
+/* ========================================
+   TERMINAL PROMPT
+   ======================================== */
+
+.terminal-prompt {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: var(--terminal-padding);
+    border-top: 1px solid var(--terminal-border);
+    background: var(--terminal-bg);
+    flex-shrink: 0;
+    position: relative;
+    z-index: 20;
+}
+
+@media (max-width: 767px) {
+    .terminal-prompt {
+        padding: 0.75rem 1rem;
+        padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    }
+}
+
+.terminal-prompt__prefix {
+    font-size: var(--font-size-base);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.terminal-prompt__user {
+    color: var(--prompt-user);
+}
+
+.terminal-prompt__at {
+    color: var(--prompt-at);
+}
+
+.terminal-prompt__host {
+    color: var(--prompt-host);
+}
+
+.terminal-prompt__path {
+    color: var(--prompt-path);
+}
+
+@media (max-width: 767px) {
+
+    .terminal-prompt__user,
+    .terminal-prompt__at,
+    .terminal-prompt__host,
+    .terminal-prompt__path {
+        display: none;
+    }
+}
+
+.terminal-prompt__symbol {
+    color: var(--prompt-symbol);
+    margin-left: 0.25rem;
+}
+
+.terminal-prompt__input-wrapper {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.terminal-prompt__input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-base);
+    outline: none;
+    caret-color: var(--accent-green);
+}
+
+.terminal-prompt__input::placeholder {
+    color: var(--text-muted);
+}
+
+.terminal-prompt__cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.2em;
+    background: var(--accent-green);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+/* ========================================
+   SUGGESTIONS
+   ======================================== */
+
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.suggestion-chip {
+    background: var(--terminal-bg-secondary);
+    border: 1px solid var(--terminal-border);
+    color: var(--accent-cyan);
+    padding: 0.25rem 0.75rem;
+    border-radius: 16px;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.suggestion-chip:hover {
+    background: var(--terminal-border);
+    border-color: var(--accent-cyan);
+}

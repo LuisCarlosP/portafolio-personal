@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTerminal, faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import i18n from '../../../../i18n/config';
+import i18n from '../../../../../i18n/config';
+import './TerminalHeader.css';
 
 const TerminalHeader = () => {
     const navigate = useNavigate();

@@ -1,12 +1,12 @@
 import React, { useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import TerminalHeader from './TerminalHeader';
-import TerminalBody from './TerminalBody';
-import TerminalPrompt from './TerminalPrompt';
-import { useTerminal } from '../../../../hooks/useTerminal';
-import { executeCommand, getWelcomeMessage, availableCommands } from '../../utils/commandRegistry';
-import i18n from '../../../../i18n/config';
-import '../../../../styles/terminal.css';
+import TerminalHeader from '../TerminalHeader';
+import TerminalBody from '../TerminalBody';
+import TerminalPrompt from '../TerminalPrompt';
+import { useTerminal } from '../../../../../hooks/useTerminal';
+import { executeCommand, getWelcomeMessage, availableCommands } from '../../../utils/commandRegistry';
+import i18n from '../../../../../i18n/config';
+import './Terminal.css';
 
 const Terminal = () => {
     const { t } = useTranslation();

@@ -1,0 +1,70 @@
+/* ========================================
+   SHARED OUTPUT STYLES
+   ======================================== */
+
+/* Command Line (History Entry) */
+.command-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: var(--font-size-base);
+    word-break: break-word;
+}
+
+.command-line__command {
+    color: var(--text-primary);
+}
+
+/* Command Output */
+.command-output {
+    animation: fadeIn 0.3s ease;
+    padding-left: 0;
+    margin-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .command-output {
+        padding-left: 1rem;
+    }
+}
+
+/* Clickable Command */
+.clickable-command {
+    display: inline;
+    color: var(--accent-cyan);
+    background: transparent;
+    border: none;
+    font-family: var(--font-mono);
+    font-size: inherit;
+    cursor: pointer;
+    padding: 0;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+    transition: color 0.2s ease;
+}
+
+.clickable-command:hover {
+    color: var(--accent-blue);
+    text-decoration-style: solid;
+}
+
+/* ========================================
+   TEXT UTILITY CLASSES
+   ======================================== */
+
+.text-green {
+    color: var(--accent-green);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.text-purple {
+    color: var(--accent-purple);
+}
