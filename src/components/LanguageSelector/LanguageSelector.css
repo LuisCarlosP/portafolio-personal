@@ -7,11 +7,11 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(16, 185, 129, 0.15);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  background: rgba(166, 227, 161, 0.1);
+  border: 1px solid var(--terminal-border);
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
-  color: var(--color-primary);
+  color: var(--accent-green);
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -19,27 +19,27 @@
 }
 
 .language-button:hover {
-  background: rgba(16, 185, 129, 0.25);
-  border-color: var(--color-primary);
+  background: rgba(166, 227, 161, 0.15);
+  border-color: var(--accent-green);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 5px 15px rgba(166, 227, 161, 0.3);
 }
 
 .language-button:focus {
   outline: none;
-  background: rgba(16, 185, 129, 0.25);
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+  background: rgba(166, 227, 161, 0.15);
+  border-color: var(--accent-green);
+  box-shadow: 0 0 0 3px rgba(166, 227, 161, 0.2);
 }
 
 .language-button:active {
-  background: rgba(16, 185, 129, 0.2);
+  background: rgba(166, 227, 161, 0.2);
   transform: translateY(1px);
 }
 
 .language-button i:first-child {
   font-size: 1.1rem;
-  color: var(--color-primary);
+  color: var(--accent-green);
 }
 
 .language-code {
@@ -60,9 +60,9 @@
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
-  background: rgba(17, 31, 23, 0.95);
+  background: var(--terminal-header);
   backdrop-filter: blur(15px);
-  border: 1px solid rgba(16, 185, 129, 0.3);
+  border: 1px solid var(--terminal-border);
   border-radius: 8px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
   overflow: hidden;
@@ -86,27 +86,27 @@
 }
 
 .language-option:hover {
-  background: rgba(16, 185, 129, 0.15);
-  color: var(--color-text-primary);
+  background: rgba(166, 227, 161, 0.15);
+  color: var(--text-primary);
 }
 
 .language-option.active {
-  background: rgba(16, 185, 129, 0.2);
-  color: var(--color-primary);
+  background: rgba(166, 227, 161, 0.2);
+  color: var(--accent-green);
 }
 
 .language-option i {
   font-size: 1.1rem;
-  color: var(--color-text-secondary);
+  color: var(--text-secondary);
   transition: color 0.2s ease;
 }
 
 .language-option:hover i {
-  color: var(--color-primary);
+  color: var(--accent-green);
 }
 
 .language-option.active i {
-  color: var(--color-primary);
+  color: var(--accent-green);
 }
 
 .language-option .language-name {
@@ -118,11 +118,11 @@
     padding: 0.4rem 0.6rem;
     font-size: 0.85rem;
   }
-  
+
   .language-dropdown {
     min-width: 120px;
   }
-  
+
   .language-option {
     padding: 0.6rem 0.8rem;
     font-size: 0.85rem;

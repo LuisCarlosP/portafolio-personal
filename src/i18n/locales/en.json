@@ -1,0 +1,91 @@
+{
+    "welcome": {
+        "title": "Welcome to Luis Carlos Picado's Terminal Portfolio",
+        "subtitle": "Type 'help' for available commands or click on any command",
+        "hint": "Tip: Use Up/Down arrows for history, Tab for autocomplete"
+    },
+    "commands": {
+        "help": "Show available commands",
+        "about": "Learn about me",
+        "whoami": "Display user info",
+        "skills": "Show my technical skills",
+        "projects": "List my projects",
+        "contact": "Show contact information",
+        "clear": "Clear terminal",
+        "ls": "List available sections",
+        "cat": "View project details (e.g., cat trashia)",
+        "lang": "Change language (e.g., lang es)",
+        "sudo": "Execute privileged commands",
+        "history": "Show command history"
+    },
+    "about": {
+        "title": "About Me",
+        "name": "Luis Carlos Picado Rojas",
+        "role": "Software Architect",
+        "description1": "I'm a Software Architect specializing in full-stack development. I design and build RESTful APIs following Clean Architecture principles, implement Machine Learning models and neural networks, and create modern, responsive user interfaces.",
+        "description2": "My experience spans from modern web application development to third-party service integrations and databases. I apply robust security (authentication, rate limiting, circuit breakers), agile methodologies, automated testing and technical documentation to ensure maintainable, high-quality code.",
+        "stats": {
+            "projects": "10+ Learning Projects",
+            "years": "3+ Years Studying",
+            "technologies": "20+ Technologies"
+        }
+    },
+    "skills": {
+        "title": "Technical Skills",
+        "frontend": "Frontend",
+        "backend": "Backend",
+        "databases": "Databases & Tools"
+    },
+    "projects": {
+        "title": "My Projects",
+        "featured": "FEATURED",
+        "viewDemo": "View Demo",
+        "viewCode": "View Code",
+        "usecat": "Use 'cat [project-id]' for details",
+        "trashia": {
+            "name": "TrashIA",
+            "description": "AI-powered REST API for waste classification into 6 categories using TensorFlow. Features include AI chat (Gemini), barcode scanning for recyclability, and recycling point location via OpenStreetMap.",
+            "details": "Full-stack AI application for waste classification and recycling assistance.\n\n• Image classification into 6 categories using TensorFlow\n• AI-powered chat assistant with Google Gemini\n• Barcode scanning for product recyclability\n• Recycling point location using OpenStreetMap\n• Multi-language support (EN/ES)\n\nTech: React, TypeScript, FastAPI, Python, TensorFlow, Redis"
+        },
+        "chess3d": {
+            "name": "Chess 3D",
+            "description": "Interactive 3D chess game built with React and Three.js. Features realistic 3D graphics, complete chess logic, and immersive gaming experience.",
+            "details": "Immersive 3D chess experience built with modern web technologies.\n\n• Realistic 3D graphics with Three.js\n• Complete chess logic with chess.js library\n• Interactive 3D board and pieces\n• Smooth animations and camera controls\n\nTech: React, Three.js, chess.js"
+        },
+        "frontend3": {
+            "name": "Frontend Proyecto 3",
+            "description": "Web application developed with Angular, TypeScript and Bootstrap. Includes dynamic navigation, reusable components and responsive design.",
+            "details": "Angular web application with modern architecture.\n\n• Dynamic routing and navigation\n• Reusable component library\n• Responsive design with Bootstrap\n• TypeScript for type safety\n\nTech: Angular, TypeScript, Bootstrap, HTML5, CSS3"
+        },
+        "crud3": {
+            "name": "CRUD Proyecto 3",
+            "description": "Complete REST API developed with Spring Boot and Gradle. Implements CRUD operations with layered architecture and best practices.",
+            "details": "Enterprise-level REST API with Spring Boot.\n\n• Full CRUD operations\n• Layered architecture (Controller, Service, Repository)\n• JWT authentication\n• CORS configuration\n\nTech: Java, Spring Boot, JWT, Gradle"
+        },
+        "graphql": {
+            "name": "Simple GraphQL API",
+            "description": "GraphQL server developed with Spring Boot and Maven. Demonstrates efficient and flexible queries for modern APIs.",
+            "details": "GraphQL API server showcasing modern API design.\n\n• Efficient data fetching with GraphQL queries\n• Flexible schema design\n• Spring Boot integration\n\nTech: Java, Spring Boot, GraphQL, Maven"
+        }
+    },
+    "contact": {
+        "title": "Contact Me",
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location",
+        "social": "Social Links",
+        "cta": "Feel free to reach out!"
+    },
+    "errors": {
+        "notFound": "Command not found: '{cmd}'. Type 'help' for available commands.",
+        "projectNotFound": "Project not found: '{id}'. Use 'projects' to see available projects.",
+        "invalidLang": "Invalid language: '{lang}'. Available: en, es",
+        "permissionDenied": "Permission denied. Nice try!",
+        "sudoHireMe": "ACCESS GRANTED! Sending job offer... Just kidding! But I'd love to hear from you at picadoluiscarlos@gmail.com"
+    },
+    "misc": {
+        "sections": "Available sections: about, skills, projects, contact",
+        "languageChanged": "Language changed to English",
+        "cleared": "Terminal cleared"
+    }
+}

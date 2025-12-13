@@ -1,0 +1,398 @@
+﻿.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem 0;
+}
+
+.hero-text {
+  animation: slideIn 1s ease-out;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(166, 227, 161, 0.1);
+  border: 1px solid var(--terminal-border);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.5rem;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.badge-icon {
+  font-size: 1.2rem;
+  color: var(--accent-green);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.badge-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.highlight-name {
+  display: block;
+  color: var(--accent-green);
+  font-size: 4.5rem;
+  margin-top: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.subtitle-label {
+  color: var(--text-muted);
+}
+
+.typing-text {
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: var(--accent-green);
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 2rem;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+}
+
+.hero-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.hero-buttons .btn-primary {
+  background: var(--accent-green);
+  color: var(--terminal-bg);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 15px rgba(166, 227, 161, 0.4);
+}
+
+.hero-buttons .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(166, 227, 161, 0.6);
+  opacity: 0.9;
+}
+
+.hero-buttons .btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--terminal-border);
+  backdrop-filter: blur(10px);
+}
+
+.hero-buttons .btn-secondary:hover {
+  transform: translateY(-3px);
+  background: rgba(166, 227, 161, 0.1);
+  border-color: var(--accent-green);
+  box-shadow: 0 8px 25px rgba(166, 227, 161, 0.3);
+}
+
+.btn-icon {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-primary:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.btn-secondary:hover .btn-icon {
+  transform: translateY(3px);
+}
+
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.visual-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-card {
+  position: absolute;
+  background: var(--terminal-bg-secondary);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--terminal-border);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 32px rgba(166, 227, 161, 0.2);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  min-width: 140px;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  border-color: var(--accent-green);
+  box-shadow: 0 12px 40px rgba(166, 227, 161, 0.4);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: var(--accent-green);
+  transition: all 0.3s ease;
+}
+
+.floating-card:hover .card-icon {
+  transform: scale(1.2) rotate(5deg);
+}
+
+.card-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.card-1 {
+  top: 10%;
+  left: 10%;
+  animation: float 6s ease-in-out infinite;
+}
+
+.card-2 {
+  top: 10%;
+  right: 10%;
+  animation: float 6s ease-in-out infinite 1.5s;
+}
+
+.card-3 {
+  bottom: 10%;
+  left: 10%;
+  animation: float 6s ease-in-out infinite 3s;
+}
+
+.card-4 {
+  bottom: 10%;
+  right: 10%;
+  animation: float 6s ease-in-out infinite 4.5s;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-text {
+    animation: none;
+  }
+
+  .floating-card {
+    animation: none;
+  }
+
+  .cursor {
+    animation: none;
+  }
+
+  .badge-icon {
+    animation: none;
+  }
+
+  .btn-primary:hover,
+  .btn-secondary:hover,
+  .floating-card:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .highlight-name {
+    font-size: 3.5rem;
+  }
+
+  .visual-container {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .highlight-name {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    justify-content: center;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .hero-visual {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .highlight-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons .btn {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}

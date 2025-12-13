@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { useLanguage } from '../../contexts/LanguageContext'
+import { useLanguage } from '../../providers/LanguageProvider'
 import './LanguageSelector.css'
 
 const LanguageSelector = () => {
@@ -32,7 +32,7 @@ const LanguageSelector = () => {
 
   return (
     <div className="language-selector" ref={dropdownRef}>
-      <button 
+      <button
         className="language-button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Select language"
@@ -41,7 +41,7 @@ const LanguageSelector = () => {
         <span className="language-code">{language.toUpperCase()}</span>
         <i className={`fas fa-chevron-down ${isOpen ? 'rotate' : ''}`}></i>
       </button>
-      
+
       {isOpen && (
         <div className="language-dropdown">
           {languages.map((lang) => (
