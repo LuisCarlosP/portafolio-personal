@@ -14,9 +14,14 @@
         "clear": "Limpiar terminal",
         "ls": "Listar secciones disponibles",
         "cat": "Ver detalles del proyecto (ej: cat trashia)",
+        "cd": "Navegar a sección (ej: cd about)",
         "lang": "Cambiar idioma (ej: lang en)",
         "sudo": "Ejecutar comandos privilegiados",
-        "history": "Mostrar historial de comandos"
+        "history": "Mostrar historial de comandos",
+        "theme": "Cambiar tema del terminal",
+        "man": "Mostrar manual del comando",
+        "cowsay": "Hacer que una vaca diga algo",
+        "social": "Mostrar redes sociales"
     },
     "about": {
         "title": "Acerca de Mí",
@@ -81,11 +86,74 @@
         "projectNotFound": "Proyecto no encontrado: '{id}'. Usa 'projects' para ver proyectos.",
         "invalidLang": "Idioma inválido: '{lang}'. Disponibles: en, es",
         "permissionDenied": "Permiso denegado. ¡Buen intento!",
-        "sudoHireMe": "¡ACCESO CONCEDIDO! Enviando oferta de trabajo... ¡Es broma! Pero me encantaría saber de ti en picadoluiscarlos@gmail.com"
+        "sudoHireMe": "¡ACCESO CONCEDIDO! Enviando oferta de trabajo... ¡Es broma! Pero me encantaría saber de ti en picadoluiscarlos@gmail.com",
+        "directoryNotFound": "Directorio no encontrado: '{dir}'. Usa 'ls' para ver secciones.",
+        "invalidTheme": "Tema inválido: '{theme}'. Disponibles: dracula, solarized, matrix, catppuccin"
     },
     "misc": {
         "sections": "Secciones disponibles: about, skills, projects, contact",
         "languageChanged": "Idioma cambiado a Español",
         "cleared": "Terminal limpiado"
+    },
+    "theme": {
+        "available": "Temas Disponibles",
+        "changed": "Tema cambiado a {theme}",
+        "usage": "Uso: theme [dracula|solarized|matrix|catppuccin]"
+    },
+    "man": {
+        "noCommand": "¿Qué página de manual quieres? Uso: man [comando]",
+        "notFound": "No hay entrada de manual para '{cmd}'",
+        "hint": "Escribe 'help' para ver comandos disponibles",
+        "help": {
+            "description": "Mostrar comandos disponibles del terminal"
+        },
+        "about": {
+            "description": "Mostrar información personal y biografía"
+        },
+        "skills": {
+            "description": "Mostrar habilidades técnicas por categoría"
+        },
+        "projects": {
+            "description": "Listar proyectos del portafolio"
+        },
+        "contact": {
+            "description": "Mostrar información de contacto"
+        },
+        "clear": {
+            "description": "Limpiar pantalla del terminal"
+        },
+        "ls": {
+            "description": "Listar secciones o contenido de directorio"
+        },
+        "cat": {
+            "description": "Ver información detallada del proyecto"
+        },
+        "cd": {
+            "description": "Navegar a y mostrar una sección"
+        },
+        "lang": {
+            "description": "Cambiar idioma de la interfaz"
+        },
+        "history": {
+            "description": "Mostrar comandos ejecutados anteriormente"
+        },
+        "theme": {
+            "description": "Cambiar tema de colores del terminal"
+        },
+        "cowsay": {
+            "description": "Mostrar arte ASCII de vaca con mensaje"
+        },
+        "social": {
+            "description": "Mostrar enlaces de redes sociales"
+        },
+        "echo": {
+            "description": "Mostrar una línea de texto"
+        },
+        "date": {
+            "description": "Mostrar fecha y hora actual"
+        },
+        "pwd": {
+            "description": "Imprimir directorio de trabajo"
+        }
     }
 }

@@ -10,6 +10,10 @@ import ContactOutput from '../components/outputs/ContactOutput';
 import SectionsOutput from '../components/outputs/SectionsOutput';
 import ErrorOutput from '../components/outputs/ErrorOutput';
 import SuccessOutput from '../components/outputs/SuccessOutput';
+import CowsayOutput from '../components/outputs/CowsayOutput';
+import SocialOutput from '../components/outputs/SocialOutput';
+import ManOutput from '../components/outputs/ManOutput';
+import ThemeOutput from '../components/outputs/ThemeOutput';
 
 export const getWelcomeMessage = () => {
     return <WelcomeMessage />;
@@ -17,8 +21,11 @@ export const getWelcomeMessage = () => {
 
 export const executeCommand = (rawCommand, context) => {
     const { t, executeCommand: exec, clearHistory, changeLanguage } = context;
-    const trimmed = rawCommand.trim().toLowerCase();
-    const [cmd, ...args] = trimmed.split(/\s+/);
+    const trimmed = rawCommand.trim();
+    const lowerTrimmed = trimmed.toLowerCase();
+    const [cmd, ...args] = lowerTrimmed.split(/\s+/);
+    // Preserve original case for echo and cowsay
+    const originalArgs = trimmed.split(/\s+/).slice(1);
 
     switch (cmd) {
         case 'help':
@@ -79,13 +86,10 @@ export const executeCommand = (rawCommand, context) => {
             );
 
         case 'sudo':
-            if (args.join(' ') === 'hire-me' || args.join('-') === 'hire-me') {
-                return <SuccessOutput message={t('errors.sudoHireMe')} />;
-            }
             return <ErrorOutput message={t('errors.permissionDenied')} />;
 
         case 'echo':
-            return <span>{args.join(' ')}</span>;
+            return <span>{originalArgs.join(' ')}</span>;
 
         case 'date':
             return <span>{new Date().toLocaleString()}</span>;
@@ -95,10 +99,47 @@ export const executeCommand = (rawCommand, context) => {
 
         case 'cd':
             const section = args[0]?.toLowerCase();
-            if (!section || ['about', 'skills', 'projects', 'contact', '~', '..'].includes(section)) {
-                return <SuccessOutput message={`Changed directory to ${section || '~'}`} />;
+            const sectionMap = {
+                'about': <AboutOutput />,
+                'skills': <SkillsOutput categories={skillCategories} />,
+                'projects': <ProjectsOutput projects={projects} onCommandClick={exec} />,
+                'contact': <ContactOutput info={personalInfo} />,
+                '~': <SectionsOutput onCommandClick={exec} />,
+                '..': <SectionsOutput onCommandClick={exec} />
+            };
+            if (!section) {
+                return <SectionsOutput onCommandClick={exec} />;
             }
-            return <ErrorOutput message={`Directory not found: ${args[0]}`} />;
+            if (sectionMap[section]) {
+                return sectionMap[section];
+            }
+            return <ErrorOutput message={t('errors.directoryNotFound').replace('{dir}', args[0])} />;
+
+        case 'man':
+            if (args.length === 0) {
+                return <ErrorOutput message={t('man.noCommand')} />;
+            }
+            return <ManOutput command={args[0]} />;
+
+        case 'cowsay':
+            return <CowsayOutput message={originalArgs.join(' ')} />;
+
+        case 'theme':
+            const validThemes = ['dracula', 'solarized', 'matrix', 'catppuccin'];
+            if (args.length === 0) {
+                return <ThemeOutput showList={true} onThemeChange={(theme) => {
+                    document.documentElement.setAttribute('data-theme', theme);
+                    localStorage.setItem('terminal-theme', theme);
+                }} />;
+            }
+            const themeName = args[0].toLowerCase();
+            if (!validThemes.includes(themeName)) {
+                return <ErrorOutput message={t('errors.invalidTheme').replace('{theme}', args[0])} />;
+            }
+            return <ThemeOutput theme={themeName} />;
+
+        case 'social':
+            return <SocialOutput info={personalInfo} />;
 
         case '':
             return null;
@@ -124,5 +165,9 @@ export const availableCommands = [
     'echo',
     'date',
     'pwd',
-    'cd'
+    'cd',
+    'man',
+    'cowsay',
+    'theme',
+    'social'
 ];

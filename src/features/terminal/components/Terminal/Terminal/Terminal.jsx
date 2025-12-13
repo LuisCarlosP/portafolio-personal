@@ -61,6 +61,16 @@ const Terminal = () => {
         }
     }, [handleExecuteCommand]);
 
+    // Load saved theme on mount
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('terminal-theme');
+        if (savedTheme && savedTheme !== 'dracula') {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
+    }, []);
+
     return (
         <div className="terminal">
             <TerminalHeader />

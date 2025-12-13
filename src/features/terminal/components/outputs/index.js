@@ -8,3 +8,8 @@ export { default as ContactOutput } from './ContactOutput';
 export { default as SectionsOutput } from './SectionsOutput';
 export { default as ErrorOutput } from './ErrorOutput';
 export { default as SuccessOutput } from './SuccessOutput';
+export { default as CowsayOutput } from './CowsayOutput';
+export { default as SocialOutput } from './SocialOutput';
+export { default as ManOutput } from './ManOutput';
+export { default as ThemeOutput } from './ThemeOutput';
+

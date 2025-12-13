@@ -52,6 +52,87 @@
   --font-size-lg: 1.25rem;
 }
 
+/* ========================================
+   THEME: SOLARIZED
+   ======================================== */
+[data-theme="solarized"] {
+  --terminal-bg: #eff1f5;
+  --terminal-bg-secondary: rgba(220, 224, 232, 0.6);
+  --terminal-header: #e6e9ef;
+  --terminal-border: #ccd0da;
+
+  --text-primary: #4c4f69;
+  --text-secondary: #5c5f77;
+  --text-muted: #8c8fa1;
+
+  --accent-red: #d20f39;
+  --accent-yellow: #df8e1d;
+  --accent-green: #40a02b;
+  --accent-blue: #1e66f5;
+  --accent-cyan: #179299;
+  --accent-purple: #8839ef;
+
+  --prompt-user: #40a02b;
+  --prompt-host: #1e66f5;
+  --prompt-path: #8839ef;
+  --prompt-symbol: #df8e1d;
+}
+
+/* ========================================
+   THEME: MATRIX
+   ======================================== */
+[data-theme="matrix"] {
+  --terminal-bg: #0a0a0a;
+  --terminal-bg-secondary: rgba(0, 20, 0, 0.6);
+  --terminal-header: #050505;
+  --terminal-border: #003300;
+
+  --text-primary: #00ff00;
+  --text-secondary: #00cc00;
+  --text-muted: #006600;
+
+  --accent-red: #ff0000;
+  --accent-yellow: #ccff00;
+  --accent-green: #00ff00;
+  --accent-blue: #00ffff;
+  --accent-cyan: #00ffcc;
+  --accent-purple: #ff00ff;
+
+  --prompt-user: #00ff00;
+  --prompt-host: #00ffff;
+  --prompt-path: #ff00ff;
+  --prompt-symbol: #ccff00;
+}
+
+/* ========================================
+   THEME: CATPPUCCIN MOCHA (variant)
+   ======================================== */
+[data-theme="catppuccin"] {
+  --terminal-bg: #1e1e2e;
+  --terminal-bg-secondary: rgba(49, 50, 68, 0.5);
+  --terminal-header: #181825;
+  --terminal-border: #45475a;
+
+  --text-primary: #cdd6f4;
+  --text-secondary: #bac2de;
+  --text-muted: #6c7086;
+
+  /* Catppuccin signature: pink/mauve as primary accents */
+  --accent-red: #f38ba8;
+  --accent-yellow: #fab387;
+  --accent-green: #f5c2e7;
+  --accent-blue: #89dceb;
+  --accent-cyan: #94e2d5;
+  --accent-purple: #cba6f7;
+
+  /* Pink/Mauve prompt colors - signature Catppuccin look */
+  --prompt-user: #f5c2e7;
+  --prompt-at: #9399b2;
+  --prompt-host: #89dceb;
+  --prompt-path: #cba6f7;
+  --prompt-symbol: #fab387;
+}
+
 @media (max-width: 767px) {
   :root {
     --font-size-xs: 0.7rem;

@@ -14,7 +14,12 @@ const HelpOutput = ({ onCommandClick }) => {
         { name: 'clear', key: 'commands.clear' },
         { name: 'ls', key: 'commands.ls' },
         { name: 'cat [id]', key: 'commands.cat' },
+        { name: 'cd [section]', key: 'commands.cd' },
         { name: 'lang [en|es]', key: 'commands.lang' },
+        { name: 'theme [name]', key: 'commands.theme' },
+        { name: 'man [cmd]', key: 'commands.man' },
+        { name: 'cowsay [text]', key: 'commands.cowsay' },
+        { name: 'social', key: 'commands.social' },
         { name: 'history', key: 'commands.history' }
     ];
 

@@ -1,0 +1,58 @@
+/* ========================================
+   MAN OUTPUT
+   ======================================== */
+
+.man-output {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.man-output--error {
+    gap: 0.5rem;
+}
+
+.man-output__error {
+    color: var(--accent-red);
+}
+
+.man-output__hint {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.man-output__section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.man-output__label {
+    color: var(--accent-yellow);
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    letter-spacing: 0.5px;
+}
+
+.man-output__value {
+    color: var(--text-primary);
+    padding-left: 1rem;
+}
+
+.man-output__code {
+    color: var(--accent-green);
+    padding-left: 1rem;
+    font-family: inherit;
+}
+
+.man-output__examples {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-left: 1rem;
+}
+
+.man-output__example {
+    color: var(--accent-blue);
+    font-family: inherit;
+}
