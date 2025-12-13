@@ -21,15 +21,6 @@ const TerminalHeader = () => {
 
     return (
         <header className="terminal-header">
-            <button
-                className="terminal-header__back-btn"
-                onClick={handleGoBack}
-                aria-label="Go back to portfolio"
-                title="Volver al portfolio"
-            >
-                <FontAwesomeIcon icon={faArrowLeft} />
-            </button>
-
             <div className="terminal-header__controls">
                 <button
                     className="terminal-header__button terminal-header__button--close"
@@ -51,6 +42,14 @@ const TerminalHeader = () => {
             </div>
 
             <div className="terminal-header__actions">
+                <button
+                    className="terminal-header__back-btn"
+                    onClick={handleGoBack}
+                    aria-label="Go back to portfolio"
+                    title="Volver al portfolio"
+                >
+                    <FontAwesomeIcon icon={faArrowLeft} />
+                </button>
                 <button
                     className={`terminal-header__lang-btn ${currentLang === 'en' ? 'terminal-header__lang-btn--active' : ''}`}
                     onClick={() => handleLanguageChange('en')}

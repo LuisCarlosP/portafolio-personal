@@ -9,6 +9,24 @@ const TerminalBody = ({ history, welcomeMessage }) => {
         }
     }, [history]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (bodyRef.current) {
+                setTimeout(() => {
+                    bodyRef.current.scrollTop = bodyRef.current.scrollHeight;
+                }, 100);
+            }
+        };
+
+        window.visualViewport?.addEventListener('resize', handleResize);
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.visualViewport?.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
     return (
         <div className="terminal-body" ref={bodyRef}>
             {/* Welcome Message */}

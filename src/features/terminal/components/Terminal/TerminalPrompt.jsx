@@ -13,6 +13,13 @@ const TerminalPrompt = ({
 
     useEffect(() => {
         inputRef.current?.focus();
+
+        const scrollToInput = () => {
+            inputRef.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+        };
+
+        scrollToInput();
+    }, []);
     }, []);
 
     useEffect(() => {
