@@ -20,7 +20,6 @@ const TerminalPrompt = ({
 
         scrollToInput();
     }, []);
-    }, []);
 
     useEffect(() => {
         const newSuggestions = getSuggestions(value);
