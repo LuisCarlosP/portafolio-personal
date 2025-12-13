@@ -10,6 +10,8 @@ const Background3D = () => {
   const canvasRef = useRef(null)
   const scrollVelocityRef = useRef(0)
 
+  const prevWidthRef = useRef(window.innerWidth)
+
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
@@ -28,14 +30,18 @@ const Background3D = () => {
 
     const resizeCanvas = () => {
       const dpr = window.devicePixelRatio || 1
+      const currentWidth = window.innerWidth
+
       canvas.width = window.innerWidth * dpr
       canvas.height = window.innerHeight * dpr
       canvas.style.width = `${window.innerWidth}px`
       canvas.style.height = `${window.innerHeight}px`
       ctx.scale(dpr, dpr)
 
-      // Recreate particles on resize
-      createParticles()
+      if (Math.abs(currentWidth - prevWidthRef.current) > 50 || particles.length === 0) {
+        createParticles()
+        prevWidthRef.current = currentWidth
+      }
     }
 
     class Particle {
@@ -52,9 +58,13 @@ const Background3D = () => {
 
       update() {
         // Apply scroll velocity to particle movement (subtle effect)
-        const scrollBoost = scrollVelocityRef.current * 0.3
-        this.vx = this.baseVx + scrollBoost * 0.3
-        this.vy = this.baseVy + scrollBoost * 1 // Subtle vertical movement
+        const scrollBoost = scrollVelocityRef.current * 0.15 // Reduced multiplier for smoother feel
+
+        this.vx += (this.baseVx - this.vx) * 0.05
+        this.vy += (this.baseVy - this.vy) * 0.05
+
+        this.vx += scrollBoost * 0.1
+        this.vy += scrollBoost * 0.5
 
         this.x += this.vx
         this.y += this.vy
@@ -75,7 +85,12 @@ const Background3D = () => {
     }
 
     const createParticles = () => {
-      const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 15000), 100)
+      const isMobile = window.innerWidth < 768
+      const divideFactor = isMobile ? 20000 : 15000
+      const maxParticles = isMobile ? 40 : 100
+
+      const particleCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / divideFactor), maxParticles)
+
       particles = []
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle())
@@ -84,14 +99,16 @@ const Background3D = () => {
 
     const drawConnections = () => {
       const maxDistance = 150
+      const maxDistanceSq = maxDistance * maxDistance // Optimization: avoid sqrt if possible, saving for distance check
 
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x
           const dy = particles[i].y - particles[j].y
-          const distance = Math.sqrt(dx * dx + dy * dy)
+          const distSq = dx * dx + dy * dy
 
-          if (distance < maxDistance) {
+          if (distSq < maxDistanceSq) {
+            const distance = Math.sqrt(distSq)
             const opacity = (1 - distance / maxDistance) * 0.15
             ctx.beginPath()
             ctx.strokeStyle = `rgba(166, 227, 161, ${opacity})`
@@ -111,7 +128,7 @@ const Background3D = () => {
       ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
 
       // Decay velocity automatically
-      scrollVelocityRef.current *= 0.9
+      scrollVelocityRef.current *= 0.92 // Slower decay for more flow
       if (Math.abs(scrollVelocityRef.current) < 0.01) {
         scrollVelocityRef.current = 0
       }
@@ -130,7 +147,7 @@ const Background3D = () => {
 
     // Initial setup
     resizeCanvas()
-    createParticles()
+
     animate()
 
     // Scroll velocity tracking
@@ -141,10 +158,13 @@ const Background3D = () => {
       const currentScrollY = window.scrollY
       const currentTime = Date.now()
       const timeDelta = Math.max(currentTime - lastScrollTime, 16) // Minimum 16ms
+
+
       const scrollDelta = currentScrollY - lastScrollY
 
-      // Calculate velocity (pixels per frame)
-      scrollVelocityRef.current = scrollDelta / (timeDelta / 16)
+      const newVelocity = scrollDelta / (timeDelta / 16)
+
+      scrollVelocityRef.current = (scrollVelocityRef.current * 0.7) + (newVelocity * 0.3)
 
       lastScrollY = currentScrollY
       lastScrollTime = currentTime
