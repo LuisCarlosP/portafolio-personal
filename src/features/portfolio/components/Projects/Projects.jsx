@@ -171,22 +171,6 @@ const Projects = () => {
               <div className={`project-card ${project.featured ? 'featured' : ''}`}>
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
-                  <div className="project-overlay">
-                    <div className="project-links">
-                      <button
-                        className="btn btn-small btn-primary"
-                        onClick={() => openModal(project.demoUrl, `${project.title} - ${t('liveDemo')}`, 'demo')}
-                      >
-                        {t('liveDemo')}
-                      </button>
-                      <button
-                        className="btn btn-small btn-outline"
-                        onClick={() => openModal(project.codeUrl, `${project.title} - ${t('viewCode')}`, 'code', t(project.codeDescriptionKey))}
-                      >
-                        {t('viewCode')}
-                      </button>
-                    </div>
-                  </div>
                   {project.featured && <span className="featured-badge">{t('featured')}</span>}
                 </div>
 
@@ -198,6 +182,21 @@ const Projects = () => {
                     {project.technologies.map((tech, index) => (
                       <span key={index} className="tech-tag" translate="no">{tech}</span>
                     ))}
+                  </div>
+
+                  <div className="project-links">
+                    <button
+                      className="btn btn-small btn-primary"
+                      onClick={() => openModal(project.demoUrl, `${project.title} - ${t('liveDemo')}`, 'demo')}
+                    >
+                      {t('liveDemo')}
+                    </button>
+                    <button
+                      className="btn btn-small btn-outline"
+                      onClick={() => openModal(project.codeUrl, `${project.title} - ${t('viewCode')}`, 'code', t(project.codeDescriptionKey))}
+                    >
+                      {t('viewCode')}
+                    </button>
                   </div>
                 </div>
               </div>

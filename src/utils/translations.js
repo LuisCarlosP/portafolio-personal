@@ -59,7 +59,7 @@ export const translations = {
     frontendProject: 'Web application developed with Angular, TypeScript and Bootstrap. Includes dynamic navigation, reusable components and responsive design.',
     crudProject: 'Complete REST API developed with Spring Boot and Gradle. Implements CRUD operations with layered architecture and best practices.',
     graphqlProject: 'GraphQL server developed with Spring Boot and Maven. Demonstrates efficient and flexible queries for modern APIs.',
-    trashIAProject: 'AI-powered REST API for waste classification into 6 categories using TensorFlow. Features include AI chat (Gemini), barcode scanning for recyclability, and recycling point location via OpenStreetMap. Built with React frontend and FastAPI backend.',
+    trashIAProject: 'AI-powered waste classification API using TensorFlow. Features AI chat, barcode scanning, and recycling point locator.',
     chess3DProject: 'Interactive 3D chess game built with React and Three.js. Features realistic 3D graphics, complete chess logic with chess.js, and an immersive gaming experience.',
 
     // Project detailed descriptions (for View Code modal)
@@ -156,7 +156,7 @@ export const translations = {
     frontendProject: 'Aplicación web desarrollada con Angular, TypeScript y Bootstrap. Incluye navegación dinámica, componentes reutilizables y diseño responsivo.',
     crudProject: 'API REST completa desarrollada con Spring Boot y Gradle. Implementa operaciones CRUD con arquitectura en capas y buenas prácticas.',
     graphqlProject: 'Servidor GraphQL desarrollado con Spring Boot y Maven. Demuestra consultas eficientes y flexibles para APIs modernas.',
-    trashIAProject: 'API REST con IA para clasificación de residuos en 6 categorías usando TensorFlow. Incluye chat IA (Gemini), escaneo de códigos de barras para reciclabilidad, y ubicación de puntos de reciclaje vía OpenStreetMap. Frontend en React y backend en FastAPI.',
+    trashIAProject: 'API con IA para clasificación de residuos usando TensorFlow. Incluye chat IA, escaneo de códigos y ubicación de puntos de reciclaje.',
     chess3DProject: 'Juego de ajedrez 3D interactivo construido con React y Three.js. Presenta gráficos 3D realistas, lógica completa de ajedrez con chess.js y una experiencia de juego inmersiva.',
 
     // Project detailed descriptions (for View Code modal)

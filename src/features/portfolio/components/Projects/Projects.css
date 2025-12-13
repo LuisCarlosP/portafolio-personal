@@ -86,24 +86,6 @@
   transition: var(--transition);
 }
 
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.project-card:hover .project-overlay {
-  opacity: 1;
-}
-
 .project-card:hover .project-image img {
   transform: scale(1.1);
 }
@@ -111,6 +93,8 @@
 .project-links {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 
 .project-links .btn {
@@ -123,7 +107,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 120px;
+  flex: 1;
   cursor: pointer;
   font-size: 0.95rem;
   background: transparent;
@@ -145,16 +129,16 @@
 
 .project-links .btn-outline {
   background: transparent;
-  color: white;
-  border-color: white;
+  color: var(--text-secondary);
+  border-color: var(--terminal-border);
 }
 
 .project-links .btn-outline:hover {
-  background: white;
-  color: var(--terminal-bg);
-  border-color: white;
+  background: rgba(166, 227, 161, 0.1);
+  color: var(--accent-green);
+  border-color: var(--accent-green);
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 15px rgba(166, 227, 161, 0.2);
 }
 
 .featured-badge {
