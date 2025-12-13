@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Header.css'
 import LanguageSelector from '../../../../components/LanguageSelector/LanguageSelector'
 import { useTranslations } from '../../../../hooks/useTranslations'
+import { useScrollTo } from '../../../../hooks/useScrollTo'
 import logoSvg from '../../../../assets/logo/luis-picado-logo.svg'
 import logoConfig from '../../../../utils/logoConfig'
 
@@ -9,6 +10,7 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { t } = useTranslations()
+  const scrollTo = useScrollTo()
 
   useEffect(() => {
     let ticking = false
@@ -27,9 +29,9 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId)
-    element?.scrollIntoView({ behavior: 'smooth' })
+  const handleNavClick = (e, sectionId) => {
+    e.preventDefault()
+    scrollTo(sectionId)
     setIsMenuOpen(false)
   }
 
@@ -42,12 +44,20 @@ const Header = () => {
             alt={logoConfig.useTranslationForText ? t('portfolio') : logoConfig.customText}
             className="logo-image"
             style={{ height: `${logoConfig.logoHeight}px` }}
-            onClick={() => logoConfig.clickToHome && scrollToSection('inicio')}
+            onClick={(e) => {
+              if (logoConfig.clickToHome) {
+                handleNavClick(e, 'inicio')
+              }
+            }}
           />
           {logoConfig.showText && (
             <span
               className="logo-text"
-              onClick={() => logoConfig.clickToHome && scrollToSection('inicio')}
+              onClick={(e) => {
+                if (logoConfig.clickToHome) {
+                  handleNavClick(e, 'inicio')
+                }
+              }}
             >
               {logoConfig.useTranslationForText ? t('portfolio') : logoConfig.customText}
             </span>
@@ -56,11 +66,11 @@ const Header = () => {
 
         <nav className={`nav ${isMenuOpen ? 'nav-open' : ''}`}>
           <ul className="nav-list">
-            <li><a href="#inicio" onClick={() => scrollToSection('inicio')}>{t('home')}</a></li>
-            <li><a href="#acerca" onClick={() => scrollToSection('acerca')}>{t('about')}</a></li>
-            <li><a href="#habilidades" onClick={() => scrollToSection('habilidades')}>{t('skills')}</a></li>
-            <li><a href="#proyectos" onClick={() => scrollToSection('proyectos')}>{t('projects')}</a></li>
-            <li><a href="#contacto" onClick={() => scrollToSection('contacto')}>{t('contact')}</a></li>
+            <li><a href="#inicio" onClick={(e) => handleNavClick(e, 'inicio')}>{t('home')}</a></li>
+            <li><a href="#acerca" onClick={(e) => handleNavClick(e, 'acerca')}>{t('about')}</a></li>
+            <li><a href="#habilidades" onClick={(e) => handleNavClick(e, 'habilidades')}>{t('skills')}</a></li>
+            <li><a href="#proyectos" onClick={(e) => handleNavClick(e, 'proyectos')}>{t('projects')}</a></li>
+            <li><a href="#contacto" onClick={(e) => handleNavClick(e, 'contacto')}>{t('contact')}</a></li>
           </ul>
         </nav>
 

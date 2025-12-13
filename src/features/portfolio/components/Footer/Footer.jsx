@@ -1,10 +1,17 @@
 import React from 'react'
 import './Footer.css'
 import { useTranslations } from '../../../../hooks/useTranslations'
+import { useScrollTo } from '../../../../hooks/useScrollTo'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
   const { t } = useTranslations()
+  const scrollTo = useScrollTo()
+
+  const handleLinkClick = (e, id) => {
+    e.preventDefault()
+    scrollTo(id)
+  }
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -24,11 +31,11 @@ const Footer = () => {
           <div className="footer-section">
             <h4>{t('quickLinks')}</h4>
             <ul className="footer-links">
-              <li><a href="#inicio">{t('home')}</a></li>
-              <li><a href="#acerca">{t('about')}</a></li>
-              <li><a href="#habilidades">{t('skills')}</a></li>
-              <li><a href="#proyectos">{t('projects')}</a></li>
-              <li><a href="#contacto">{t('contact')}</a></li>
+              <li><a href="#inicio" onClick={(e) => handleLinkClick(e, 'inicio')}>{t('home')}</a></li>
+              <li><a href="#acerca" onClick={(e) => handleLinkClick(e, 'acerca')}>{t('about')}</a></li>
+              <li><a href="#habilidades" onClick={(e) => handleLinkClick(e, 'habilidades')}>{t('skills')}</a></li>
+              <li><a href="#proyectos" onClick={(e) => handleLinkClick(e, 'proyectos')}>{t('projects')}</a></li>
+              <li><a href="#contacto" onClick={(e) => handleLinkClick(e, 'contacto')}>{t('contact')}</a></li>
             </ul>
           </div>
 
