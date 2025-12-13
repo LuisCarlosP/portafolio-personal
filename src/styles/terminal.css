@@ -26,6 +26,15 @@
     }
 }
 
+@media (max-width: 767px) {
+    .terminal {
+        height: 100dvh;
+        /* Use dynamic viewport height for mobile */
+        max-height: 100dvh;
+        border-radius: 0;
+    }
+}
+
 /* ========================================
    TERMINAL HEADER
    ======================================== */
@@ -40,6 +49,9 @@
     border-bottom: 1px solid var(--terminal-border);
     padding: 0 var(--terminal-padding);
     user-select: none;
+    /* Ensure header stays on top if we use strict flex layout */
+    position: relative;
+    z-index: 10;
 }
 
 .terminal-header__back-btn {
@@ -156,10 +168,9 @@
     scroll-behavior: smooth;
 }
 
-/* Mobile: Add bottom padding for prompt */
 @media (max-width: 767px) {
     .terminal-body {
-        padding-bottom: calc(var(--terminal-padding) + 60px);
+        padding-bottom: var(--terminal-padding);
     }
 }
 
@@ -173,18 +184,14 @@
     gap: 0.5rem;
     padding: var(--terminal-padding);
     border-top: 1px solid var(--terminal-border);
-    background: var(--terminal-bg-secondary);
+    background: var(--terminal-bg);
     flex-shrink: 0;
     position: relative;
+    z-index: 20;
 }
 
-/* Mobile: Fixed at bottom */
 @media (max-width: 767px) {
     .terminal-prompt {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
         padding: 0.75rem 1rem;
         padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
     }
