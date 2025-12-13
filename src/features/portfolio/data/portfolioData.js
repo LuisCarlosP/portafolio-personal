@@ -11,6 +11,7 @@ export const personalInfo = {
 export const projects = [
     {
         id: 'trashia',
+        aliases: ['trashia', 'trash', 'ia'],
         name: 'TrashIA',
         description: 'projects.trashia.description',
         details: 'projects.trashia.details',
@@ -22,6 +23,7 @@ export const projects = [
     },
     {
         id: 'chess3d',
+        aliases: ['chess3d', 'chess', 'ajedrez'],
         name: 'Chess 3D',
         description: 'projects.chess3d.description',
         details: 'projects.chess3d.details',
@@ -33,6 +35,7 @@ export const projects = [
     },
     {
         id: 'frontend3',
+        aliases: ['frontend3', 'frontendproyecto3', 'frontend'],
         name: 'Frontend Proyecto 3',
         description: 'projects.frontend3.description',
         details: 'projects.frontend3.details',
@@ -44,6 +47,7 @@ export const projects = [
     },
     {
         id: 'crud3',
+        aliases: ['crud3', 'crudproyecto3', 'crud'],
         name: 'CRUD Proyecto 3',
         description: 'projects.crud3.description',
         details: 'projects.crud3.details',
@@ -55,6 +59,7 @@ export const projects = [
     },
     {
         id: 'graphql',
+        aliases: ['graphql', 'simplegraphql', 'graphqlapi'],
         name: 'Simple GraphQL API',
         description: 'projects.graphql.description',
         details: 'projects.graphql.details',

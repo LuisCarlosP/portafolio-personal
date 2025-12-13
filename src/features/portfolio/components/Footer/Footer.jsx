@@ -44,10 +44,12 @@ const Footer = () => {
           <div className="footer-section">
             <h4>{t('techStack')}</h4>
             <ul className="footer-links">
+              <li translate="no">Python</li>
+              <li translate="no">Java</li>
               <li translate="no">React</li>
-              <li translate="no">Vite</li>
-              <li translate="no">JavaScript</li>
-              <li translate="no">CSS</li>
+              <li translate="no">MySQL</li>
+              <li translate="no">Docker</li>
+              <li translate="no">Git</li>
             </ul>
           </div>
 

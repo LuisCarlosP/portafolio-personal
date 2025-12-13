@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import profileImage from '../../../../assets/images/profile/PixelFace.webp'
+import profileImage from '../../assets/images/profile/PixelFace.webp'
 import { useTranslations } from '../../../../hooks/useTranslations'
 
 const About = () => {

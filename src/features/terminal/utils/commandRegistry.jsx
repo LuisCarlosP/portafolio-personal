@@ -51,7 +51,10 @@ export const executeCommand = (rawCommand, context) => {
                 return <ErrorOutput message={t('errors.projectNotFound').replace('{id}', '')} />;
             }
             const projectId = args[0].toLowerCase();
-            const project = projects.find(p => p.id.toLowerCase() === projectId);
+            const project = projects.find(p =>
+                p.id.toLowerCase() === projectId ||
+                (p.aliases && p.aliases.some(alias => alias.toLowerCase() === projectId))
+            );
             if (!project) {
                 return <ErrorOutput message={t('errors.projectNotFound').replace('{id}', args[0])} />;
             }

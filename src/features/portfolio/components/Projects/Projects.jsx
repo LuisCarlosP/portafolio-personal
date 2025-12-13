@@ -6,11 +6,11 @@ import 'swiper/css/pagination'
 import './Projects.css'
 import { useTranslations } from '../../../../hooks/useTranslations'
 import Modal from '../Modal/Modal'
-import frontendProyecto3 from '../../../../assets/images/projects/FrontendProyecto3.webp'
-import crudProyecto3 from '../../../../assets/images/projects/CrudProyecto3.webp'
-import simpleGraphQL from '../../../../assets/images/projects/SimpleGraphQL.webp'
-import trashIA from '../../../../assets/images/projects/TrashIA.webp'
-import chess3D from '../../../../assets/images/projects/chess3D.webp'
+import frontendProyecto3 from '../../assets/images/projects/FrontendProyecto3.webp'
+import crudProyecto3 from '../../assets/images/projects/CrudProyecto3.webp'
+import simpleGraphQL from '../../assets/images/projects/SimpleGraphQL.webp'
+import trashIA from '../../assets/images/projects/TrashIA.webp'
+import chess3D from '../../assets/images/projects/chess3D.webp'
 
 const Projects = () => {
   const [filter, setFilter] = useState('all')

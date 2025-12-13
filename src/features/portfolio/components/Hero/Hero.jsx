@@ -58,7 +58,7 @@ const Hero = () => {
               <span className="badge-text">{t('heroTitle')}</span>
             </div>
             <h1 className="hero-title">
-              <span className="highlight-name">Luis Carlos Picado Rojas</span>
+              <span className="highlight-name">Luis Carlos<br />Picado Rojas</span>
             </h1>
             <h2 className="hero-subtitle">
               <span className="subtitle-label">{language === 'es' ? 'Soy ' : 'I am '}</span>
