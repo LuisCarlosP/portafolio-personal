@@ -26,7 +26,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Frontend Proyecto 3 - Angular",
+      title: "Frontend Proyecto 3",
       description: t('frontendProject'),
       image: frontendProyecto3,
       technologies: ["Angular", "TypeScript", "CSS3", "HTML5"],
@@ -38,7 +38,7 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "CRUD Proyecto 3 - Spring Boot",
+      title: "CRUD Proyecto 3",
       description: t('crudProject'),
       image: crudProyecto3,
       technologies: ["Java", "Spring Boot", "JWT", "CORS", "Gradle"],
@@ -176,8 +176,6 @@ const Projects = () => {
 
                 <div className="project-content">
                   <h3 className="project-title">{project.title}</h3>
-                  <p className="project-description">{project.description}</p>
-
                   <div className="project-technologies">
                     {project.technologies.map((tech, index) => (
                       <span key={index} className="tech-tag" translate="no">{tech}</span>
@@ -193,9 +191,9 @@ const Projects = () => {
                     </button>
                     <button
                       className="btn btn-small btn-outline"
-                      onClick={() => openModal(project.codeUrl, `${project.title} - ${t('viewCode')}`, 'code', t(project.codeDescriptionKey))}
+                      onClick={() => openModal(project.codeUrl, `${project.title} - ${t('viewDescription')}`, 'code', t(project.codeDescriptionKey))}
                     >
-                      {t('viewCode')}
+                      {t('viewDescription')}
                     </button>
                   </div>
                 </div>
