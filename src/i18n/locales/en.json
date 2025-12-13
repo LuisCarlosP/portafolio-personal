@@ -1,6 +1,6 @@
 {
     "welcome": {
-        "title": "Welcome to Luis Carlos Picado's Terminal Portfolio",
+        "title": "Welcome to Luis Carlos Picado's Terminal",
         "subtitle": "Type 'help' for available commands or click on any command",
         "hint": "Tip: Use Up/Down arrows for history, Tab for autocomplete"
     },

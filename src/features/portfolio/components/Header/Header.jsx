@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Header.css'
 import LanguageSelector from '../../../../components/LanguageSelector/LanguageSelector'
 import { useTranslations } from '../../../../hooks/useTranslations'
@@ -71,6 +72,7 @@ const Header = () => {
             <li><a href="#habilidades" onClick={(e) => handleNavClick(e, 'habilidades')}>{t('skills')}</a></li>
             <li><a href="#proyectos" onClick={(e) => handleNavClick(e, 'proyectos')}>{t('projects')}</a></li>
             <li><a href="#contacto" onClick={(e) => handleNavClick(e, 'contacto')}>{t('contact')}</a></li>
+            <li><Link to="/terminal" className="nav-terminal"><i className="fas fa-terminal"></i> Terminal</Link></li>
           </ul>
         </nav>
 

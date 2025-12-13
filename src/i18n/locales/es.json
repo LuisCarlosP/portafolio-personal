@@ -1,6 +1,6 @@
 {
     "welcome": {
-        "title": "Bienvenido al Terminal Portfolio de Luis Carlos Picado",
+        "title": "Bienvenido al terminal de Luis Carlos Picado",
         "subtitle": "Escribe 'help' para ver comandos o haz clic en cualquier comando",
         "hint": "Tip: Usa Arriba/Abajo para historial, Tab para autocompletar"
     },

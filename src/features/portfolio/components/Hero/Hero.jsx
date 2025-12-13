@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import './Hero.css'
 import Background3D from '../Background3D/Background3D'
 import { useTranslations } from '../../../../hooks/useTranslations'
@@ -68,13 +69,13 @@ const Hero = () => {
               {t('heroDescription')}
             </p>
             <div className="hero-buttons">
-              <button
+              <Link
+                to="/terminal"
                 className="btn btn-primary"
-                onClick={() => document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                <span className="btn-text">{t('viewProjects')}</span>
-                <i className="fas fa-arrow-right btn-icon"></i>
-              </button>
+                <i className="fas fa-terminal btn-icon"></i>
+                <span className="btn-text">Terminal</span>
+              </Link>
               <a
                 href={`${import.meta.env.BASE_URL}documents/CV_Luis_Carlos_Picado_Rojas.pdf`}
                 download="CV_Luis_Carlos_Picado.pdf"

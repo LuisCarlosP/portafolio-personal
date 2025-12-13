@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 import { useTranslations } from '../../../../hooks/useTranslations'
 import { useScrollTo } from '../../../../hooks/useScrollTo'
@@ -36,6 +37,7 @@ const Footer = () => {
               <li><a href="#habilidades" onClick={(e) => handleLinkClick(e, 'habilidades')}>{t('skills')}</a></li>
               <li><a href="#proyectos" onClick={(e) => handleLinkClick(e, 'proyectos')}>{t('projects')}</a></li>
               <li><a href="#contacto" onClick={(e) => handleLinkClick(e, 'contacto')}>{t('contact')}</a></li>
+              <li><Link to="/terminal"><i className="fas fa-terminal"></i> Terminal</Link></li>
             </ul>
           </div>
 

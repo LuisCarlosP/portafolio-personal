@@ -30,7 +30,7 @@ const SocialOutput = ({ info }) => {
         {
             name: 'Portfolio',
             icon: faGlobe,
-            url: window.location.origin,
+            url: 'https://luiscarlosp.github.io/portafolio-personal/#/',
             color: 'var(--accent-green)'
         }
     ];
