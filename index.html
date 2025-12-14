@@ -6,6 +6,7 @@
   <link rel="icon" type="image/svg+xml" href="./luis-picado-favicon.svg" />
   <link rel="apple-touch-icon" href="./luis-picado-favicon.svg" />
   <link rel="manifest" href="./site.webmanifest" />
+  <link rel="stylesheet" href="./loading.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google" content="notranslate" />
   <meta name="translate" content="no" />
@@ -38,9 +39,80 @@
   <meta name="twitter:image" content="https://luiscarlosp.github.io/portafolio-personal/Preview.png" />
 
   <title>Luis Carlos Picado - Portfolio</title>
+
+  <!-- Apply theme colors before loading screen renders -->
+  <script>
+    (function () {
+      const themes = {
+        dracula: {
+          bg: '#1e1e2e', header: '#181825', terminal: '#11111b', border: '#313244',
+          textPrimary: '#cdd6f4', textMuted: '#6c7086', accentGreen: '#a6e3a1',
+          accentBlue: '#89b4fa', accentPurple: '#cba6f7', accentYellow: '#f9e2af', accentRed: '#f38ba8'
+        },
+        solarized: {
+          bg: '#002b36', header: '#073642', terminal: '#073642', border: '#586e75',
+          textPrimary: '#839496', textMuted: '#657b83', accentGreen: '#859900',
+          accentBlue: '#268bd2', accentPurple: '#6c71c4', accentYellow: '#b58900', accentRed: '#dc322f'
+        },
+        matrix: {
+          bg: '#0d0d0d', header: '#0a0a0a', terminal: '#0a0a0a', border: '#1a3d1a',
+          textPrimary: '#33ff33', textMuted: '#118811', accentGreen: '#33ff33',
+          accentBlue: '#00ddff', accentPurple: '#dd44ff', accentYellow: '#aaff00', accentRed: '#ff4444'
+        },
+        catppuccin: {
+          bg: '#1e1e2e', header: '#181825', terminal: '#11111b', border: '#45475a',
+          textPrimary: '#cdd6f4', textMuted: '#6c7086', accentGreen: '#cba6f7',
+          accentBlue: '#89b4fa', accentPurple: '#f5c2e7', accentYellow: '#f9e2af', accentRed: '#f38ba8'
+        }
+      };
+      const savedTheme = localStorage.getItem('terminal-theme') || 'dracula';
+      const theme = themes[savedTheme] || themes.dracula;
+      const root = document.documentElement.style;
+      root.setProperty('--loading-bg', theme.bg);
+      root.setProperty('--loading-header', theme.header);
+      root.setProperty('--loading-terminal', theme.terminal);
+      root.setProperty('--loading-border', theme.border);
+      root.setProperty('--loading-text', theme.textPrimary);
+      root.setProperty('--loading-muted', theme.textMuted);
+      root.setProperty('--loading-accent', theme.accentGreen);
+      root.setProperty('--loading-blue', theme.accentBlue);
+      root.setProperty('--loading-purple', theme.accentPurple);
+      root.setProperty('--loading-yellow', theme.accentYellow);
+      root.setProperty('--loading-red', theme.accentRed);
+    })();
+  </script>
 </head>
 
 <body>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-container">
+      <div class="loading-terminal">
+        <div class="loading-header">
+          <div class="loading-dots">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+          </div>
+          <span class="loading-title">terminal</span>
+        </div>
+        <div class="loading-body">
+          <div class="loading-line">
+            <span class="prompt-user">guest</span><span class="prompt-at">@</span><span
+              class="prompt-host">portfolio</span><span class="prompt-colon">:</span><span
+              class="prompt-path">~</span><span class="prompt-symbol">$</span>
+            <span class="loading-text">./loading</span>
+            <span class="cursor"></span>
+          </div>
+          <div class="loading-progress">
+            <div class="progress-bar"></div>
+          </div>
+          <div class="loading-status">Initializing portfolio<span class="dots"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
