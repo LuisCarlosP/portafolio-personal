@@ -92,7 +92,7 @@ export const translations = {
     // Footer
     footerDescription: 'Software Architect specializing in Full-Stack development. Focused on scalable architectures, security and development best practices.',
     quickLinks: 'Quick Links',
-    techStack: 'Tech Stack',
+    themes: 'Themes',
     allRightsReserved: 'All rights reserved',
     backToTop: 'Back to top'
   },
@@ -190,7 +190,7 @@ export const translations = {
     // Footer
     footerDescription: 'Arquitecto de Software especializado en desarrollo Full-Stack. Enfocado en arquitecturas escalables, seguridad y buenas prácticas de desarrollo.',
     quickLinks: 'Enlaces Rápidos',
-    techStack: 'Stack Tecnológico',
+    themes: 'Temas',
     allRightsReserved: 'Todos los derechos reservados',
     backToTop: 'Volver arriba'
   }

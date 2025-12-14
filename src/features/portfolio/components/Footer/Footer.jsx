@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Footer.css'
 import { useTranslations } from '../../../../hooks/useTranslations'
@@ -8,10 +8,30 @@ const Footer = () => {
   const currentYear = new Date().getFullYear()
   const { t } = useTranslations()
   const scrollTo = useScrollTo()
+  const [currentTheme, setCurrentTheme] = useState(
+    () => localStorage.getItem('terminal-theme') || 'dracula'
+  )
+
+  const themes = [
+    { id: 'dracula', name: 'Dracula' },
+    { id: 'solarized', name: 'Solarized' },
+    { id: 'matrix', name: 'Matrix' },
+    { id: 'catppuccin', name: 'Catppuccin' }
+  ]
 
   const handleLinkClick = (e, id) => {
     e.preventDefault()
     scrollTo(id)
+  }
+
+  const changeTheme = (themeId) => {
+    setCurrentTheme(themeId)
+    localStorage.setItem('terminal-theme', themeId)
+    if (themeId === 'dracula') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', themeId)
+    }
   }
 
   const scrollToTop = () => {
@@ -42,14 +62,20 @@ const Footer = () => {
           </div>
 
           <div className="footer-section">
-            <h4>{t('techStack')}</h4>
-            <ul className="footer-links">
-              <li translate="no">Python</li>
-              <li translate="no">Java</li>
-              <li translate="no">React</li>
-              <li translate="no">MySQL</li>
-              <li translate="no">Docker</li>
-              <li translate="no">Git</li>
+            <h4>{t('themes')}</h4>
+            <ul className="footer-links theme-list">
+              {themes.map((theme) => (
+                <li key={theme.id}>
+                  <button
+                    className={`theme-button ${currentTheme === theme.id ? 'active' : ''}`}
+                    onClick={() => changeTheme(theme.id)}
+                    translate="no"
+                  >
+                    {currentTheme === theme.id && <i className="fas fa-check"></i>}
+                    {theme.name}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 

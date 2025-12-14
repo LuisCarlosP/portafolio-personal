@@ -55,6 +55,43 @@
   text-shadow: 0 0 10px rgba(166, 227, 161, 0.5);
 }
 
+/* Theme buttons */
+.theme-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.theme-button {
+  background: transparent;
+  border: 1px solid var(--terminal-border);
+  color: var(--text-secondary);
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.theme-button:hover {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+  background: rgba(166, 227, 161, 0.1);
+}
+
+.theme-button.active {
+  color: var(--accent-green);
+  border-color: var(--accent-green);
+  background: rgba(166, 227, 161, 0.15);
+}
+
+.theme-button i {
+  font-size: 0.75rem;
+}
+
 .contact-info p {
   margin-bottom: 0.5rem !important;
   font-size: 0.9rem;
@@ -117,5 +154,9 @@
 
   .social-links {
     justify-content: center;
+  }
+
+  .theme-list {
+    align-items: center;
   }
 }
