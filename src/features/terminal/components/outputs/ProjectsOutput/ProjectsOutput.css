@@ -2,6 +2,23 @@
    PROJECTS OUTPUT
    ======================================== */
 
+.projects-output {
+    font-family: var(--font-mono);
+}
+
+.projects-output__title {
+    color: var(--accent-green);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.projects-output__hint {
+    color: var(--text-muted);
+    margin-top: 1rem;
+    font-size: var(--font-size-sm);
+}
+
 .project-card {
     border: 1px solid var(--terminal-border);
     border-radius: 8px;

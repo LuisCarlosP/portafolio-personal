@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import '../shared.css';
 import './SocialOutput.css';
 
-const SocialOutput = ({ info }) => {
+const SocialOutput = memo(({ info }) => {
     const { t } = useTranslation();
 
     const socials = [
@@ -36,18 +37,18 @@ const SocialOutput = ({ info }) => {
     ];
 
     return (
-        <div className="social-output">
-            <h3 className="social-output__title">
+        <div className="social-output anim-fade-in">
+            <h3 className="social-output__title anim-slide-down">
                 {t('contact.social')}
             </h3>
             <div className="social-output__grid">
-                {socials.filter(s => s.url).map((social) => (
+                {socials.filter(s => s.url).map((social, index) => (
                     <a
                         key={social.name}
                         href={social.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="social-output__link"
+                        className={`social-output__link anim-slide-right anim-delay-${index + 1}`}
                         style={{ '--social-color': social.color }}
                     >
                         <FontAwesomeIcon icon={social.icon} className="social-output__icon" />
@@ -60,6 +61,8 @@ const SocialOutput = ({ info }) => {
             </div>
         </div>
     );
-};
+});
+
+SocialOutput.displayName = 'SocialOutput';
 
 export default SocialOutput;

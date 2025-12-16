@@ -1,58 +1,59 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhone, faMapMarkerAlt, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import '../shared.css';
 import './ContactOutput.css';
 
-const ContactOutput = ({ info }) => {
+const ContactOutput = memo(({ info }) => {
     const { t } = useTranslation();
 
     return (
-        <div className="contact-output">
-            <h3 style={{ color: 'var(--accent-green)', marginBottom: '1rem' }}>
+        <div className="contact-output anim-fade-in">
+            <h3 className="contact-output__title anim-slide-down">
                 {t('contact.title')}
             </h3>
 
-            <div className="contact-output__item">
+            <div className="contact-output__item anim-slide-right anim-delay-1">
                 <span className="contact-output__label">
-                    <FontAwesomeIcon icon={faEnvelope} style={{ marginRight: '0.5rem' }} />
+                    <FontAwesomeIcon icon={faEnvelope} className="contact-output__icon" />
                     {t('contact.email')}:
                 </span>
-                <a href={`mailto:${info.email}`} className="contact-output__value" style={{ color: 'var(--accent-cyan)' }}>
+                <a href={`mailto:${info.email}`} className="contact-output__link">
                     {info.email}
                 </a>
             </div>
 
-            <div className="contact-output__item">
+            <div className="contact-output__item anim-slide-right anim-delay-2">
                 <span className="contact-output__label">
-                    <FontAwesomeIcon icon={faPhone} style={{ marginRight: '0.5rem' }} />
+                    <FontAwesomeIcon icon={faPhone} className="contact-output__icon" />
                     {t('contact.phone')}:
                 </span>
-                <a href={`tel:${info.phone}`} className="contact-output__value" style={{ color: 'var(--accent-cyan)' }}>
+                <a href={`tel:${info.phone}`} className="contact-output__link">
                     {info.phone}
                 </a>
             </div>
 
-            <div className="contact-output__item">
+            <div className="contact-output__item anim-slide-right anim-delay-3">
                 <span className="contact-output__label">
-                    <FontAwesomeIcon icon={faMapMarkerAlt} style={{ marginRight: '0.5rem' }} />
+                    <FontAwesomeIcon icon={faMapMarkerAlt} className="contact-output__icon" />
                     {t('contact.location')}:
                 </span>
                 <span className="contact-output__value">{info.location}</span>
             </div>
 
-            <div style={{ marginTop: '1rem' }}>
-                <h4 style={{ color: 'var(--accent-yellow)', marginBottom: '0.5rem' }}>
-                    <FontAwesomeIcon icon={faLink} style={{ marginRight: '0.5rem' }} />
+            <div className="contact-output__social anim-slide-up anim-delay-4">
+                <h4 className="contact-output__social-title">
+                    <FontAwesomeIcon icon={faLink} className="contact-output__icon" />
                     {t('contact.social')}
                 </h4>
-                <div style={{ display: 'flex', gap: '1rem' }}>
+                <div className="contact-output__social-links">
                     <a
                         href={info.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="project-card__link"
+                        className="contact-output__social-link"
                     >
                         <FontAwesomeIcon icon={faGithub} />
                         GitHub
@@ -61,7 +62,7 @@ const ContactOutput = ({ info }) => {
                         href={info.linkedin}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="project-card__link"
+                        className="contact-output__social-link"
                     >
                         <FontAwesomeIcon icon={faLinkedin} />
                         LinkedIn
@@ -69,11 +70,13 @@ const ContactOutput = ({ info }) => {
                 </div>
             </div>
 
-            <p style={{ color: 'var(--text-muted)', marginTop: '1rem', fontStyle: 'italic' }}>
+            <p className="contact-output__cta anim-fade-in anim-delay-5">
                 {t('contact.cta')}
             </p>
         </div>
     );
-};
+});
+
+ContactOutput.displayName = 'ContactOutput';
 
 export default ContactOutput;

@@ -1,20 +1,24 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExternalLinkAlt, faCode } from '@fortawesome/free-solid-svg-icons';
+import '../shared.css';
 import './ProjectsOutput.css';
 
-const ProjectsOutput = ({ projects, onCommandClick }) => {
+const ProjectsOutput = memo(({ projects, onCommandClick }) => {
     const { t } = useTranslation();
 
     return (
-        <div className="projects-output">
-            <h3 style={{ color: 'var(--accent-green)', marginBottom: '1rem' }}>
+        <div className="projects-output anim-fade-in">
+            <h3 className="projects-output__title anim-slide-down">
                 {t('projects.title')}
             </h3>
 
-            {projects.map((project) => (
-                <div key={project.id} className="project-card">
+            {projects.map((project, index) => (
+                <div
+                    key={project.id}
+                    className={`project-card anim-slide-right anim-delay-${Math.min(index + 1, 10)}`}
+                >
                     <div className="project-card__header">
                         <button
                             className="clickable-command project-card__name"
@@ -61,11 +65,13 @@ const ProjectsOutput = ({ projects, onCommandClick }) => {
                 </div>
             ))}
 
-            <p style={{ color: 'var(--text-muted)', marginTop: '1rem' }}>
+            <p className="projects-output__hint anim-fade-in anim-delay-5">
                 {t('projects.usecat')}
             </p>
         </div>
     );
-};
+});
+
+ProjectsOutput.displayName = 'ProjectsOutput';
 
 export default ProjectsOutput;
