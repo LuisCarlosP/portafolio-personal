@@ -2,4 +2,32 @@
    WELCOME MESSAGE
    ======================================== */
 
-/* ASCII Art - imported from shared for WelcomeMessage */
+.welcome-message {
+   font-family: var(--font-mono);
+   margin-bottom: 1rem;
+}
+
+/* ASCII Art Styling */
+.ascii-art {
+   color: var(--accent-green);
+   font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+   font-size: 0.75rem;
+   line-height: 1.2;
+   margin: 0;
+   white-space: pre;
+   overflow-x: auto;
+}
+
+/* Responsive ASCII Art - mantener legible */
+@media (max-width: 767px) {
+   .ascii-art {
+      font-size: 0.55rem;
+      line-height: 1.15;
+   }
+}
+
+@media (max-width: 480px) {
+   .ascii-art {
+      font-size: 0.5rem;
+   }
+}
