@@ -1,67 +1,164 @@
 /* ========================================
-   SKILLS OUTPUT
+   SKILLS OUTPUT - Terminal Style
    ======================================== */
 
-/* Progress Bar */
-.progress-bar {
+.skills-terminal {
+    font-family: var(--font-mono);
+    line-height: 1.6;
+    animation: skills-fade-in 0.3s ease-out forwards;
+}
+
+.skills-terminal__title {
+    color: var(--accent-green);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    animation: skills-slide-in 0.4s ease-out forwards;
+}
+
+.skills-terminal__category {
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: skills-slide-in 0.4s ease-out forwards;
+}
+
+/* Stagger categories */
+.skills-terminal__category:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.skills-terminal__category:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skills-terminal__category:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.skills-terminal__category:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.skills-terminal__category-title {
+    color: var(--accent-yellow);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.skills-terminal__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.skills-terminal__item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     font-size: var(--font-size-sm);
-    margin: 0.25rem 0;
+    opacity: 0;
+    animation: skills-item-in 0.3s ease-out forwards;
 }
 
-.progress-bar__label {
+/* Stagger items within each category */
+.skills-terminal__item:nth-child(1) {
+    animation-delay: 0.15s;
+}
+
+.skills-terminal__item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.skills-terminal__item:nth-child(3) {
+    animation-delay: 0.25s;
+}
+
+.skills-terminal__item:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.skills-terminal__item:nth-child(5) {
+    animation-delay: 0.35s;
+}
+
+.skills-terminal__item:nth-child(6) {
+    animation-delay: 0.4s;
+}
+
+.skills-terminal__item:nth-child(7) {
+    animation-delay: 0.45s;
+}
+
+.skills-terminal__item:nth-child(8) {
+    animation-delay: 0.5s;
+}
+
+.skills-terminal__name {
     min-width: 100px;
     color: var(--text-primary);
 }
 
 @media (min-width: 768px) {
-    .progress-bar__label {
+    .skills-terminal__name {
         min-width: 140px;
     }
 }
 
-.progress-bar__track {
-    flex: 1;
-    max-width: 200px;
-    display: flex;
+.skills-terminal__bar {
     font-family: var(--font-mono);
-    color: var(--text-muted);
+    letter-spacing: 1px;
 }
 
-.progress-bar__filled {
+.skills-terminal__bar-filled {
     color: var(--accent-green);
 }
 
-.progress-bar__empty {
+.skills-terminal__bar-empty {
     color: var(--terminal-border);
 }
 
-.progress-bar__value {
+.skills-terminal__percent {
     min-width: 40px;
     text-align: right;
     color: var(--accent-yellow);
+    font-weight: 500;
 }
 
-/* ASCII Art */
-.ascii-art {
-    font-size: var(--font-size-xs);
-    line-height: 1.2;
-    color: var(--accent-green);
-    white-space: pre;
-    overflow-x: auto;
-}
+/* ========================================
+   ANIMATIONS
+   ======================================== */
 
-@media (min-width: 768px) {
-    .ascii-art {
-        font-size: var(--font-size-sm);
+@keyframes skills-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
     }
 }
 
-@media (max-width: 767px) {
-    .ascii-art {
-        font-size: 8px;
-        letter-spacing: -0.5px;
+@keyframes skills-slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes skills-item-in {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
