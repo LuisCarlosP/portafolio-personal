@@ -1,0 +1,286 @@
+:root {
+  --about-visual-radial-a: rgba(166, 227, 161, 0.18);
+  --about-visual-radial-b: rgba(137, 180, 250, 0.14);
+  --about-visual-bg-start: rgba(17, 17, 27, 0.95);
+  --about-visual-bg-end: rgba(30, 30, 46, 0.95);
+  --about-visual-frame: rgba(166, 227, 161, 0.2);
+  --about-visual-grid: rgba(166, 227, 161, 0.05);
+  --about-visual-ring: rgba(166, 227, 161, 0.22);
+  --about-visual-ring-glow: rgba(166, 227, 161, 0.08);
+  --about-status-bg: rgba(17, 17, 27, 0.8);
+  --about-status-border: rgba(166, 227, 161, 0.25);
+  --about-terminal-bg-top: rgba(10, 15, 13, 0.95);
+  --about-terminal-bg-bottom: rgba(17, 17, 27, 0.96);
+  --about-terminal-border: rgba(166, 227, 161, 0.24);
+  --about-terminal-scan: rgba(166, 227, 161, 0.3);
+  --about-terminal-divider: rgba(166, 227, 161, 0.18);
+  --about-linux-icon: #f5f7ff;
+}
+
+[data-theme="solarized"] {
+  --about-visual-radial-a: rgba(133, 153, 0, 0.18);
+  --about-visual-radial-b: rgba(38, 139, 210, 0.16);
+  --about-visual-bg-start: rgba(0, 43, 54, 0.95);
+  --about-visual-bg-end: rgba(7, 54, 66, 0.96);
+  --about-visual-frame: rgba(42, 161, 152, 0.26);
+  --about-visual-grid: rgba(147, 161, 161, 0.08);
+  --about-visual-ring: rgba(38, 139, 210, 0.26);
+  --about-visual-ring-glow: rgba(38, 139, 210, 0.09);
+  --about-status-bg: rgba(7, 54, 66, 0.82);
+  --about-status-border: rgba(42, 161, 152, 0.32);
+  --about-terminal-bg-top: rgba(0, 43, 54, 0.97);
+  --about-terminal-bg-bottom: rgba(7, 54, 66, 0.97);
+  --about-terminal-border: rgba(42, 161, 152, 0.28);
+  --about-terminal-scan: rgba(38, 139, 210, 0.32);
+  --about-terminal-divider: rgba(42, 161, 152, 0.22);
+  --about-linux-icon: #93a1a1;
+}
+
+[data-theme="matrix"] {
+  --about-visual-radial-a: rgba(51, 255, 51, 0.2);
+  --about-visual-radial-b: rgba(0, 255, 170, 0.14);
+  --about-visual-bg-start: rgba(5, 18, 5, 0.96);
+  --about-visual-bg-end: rgba(8, 12, 8, 0.98);
+  --about-visual-frame: rgba(51, 255, 51, 0.28);
+  --about-visual-grid: rgba(51, 255, 51, 0.09);
+  --about-visual-ring: rgba(51, 255, 51, 0.3);
+  --about-visual-ring-glow: rgba(51, 255, 51, 0.1);
+  --about-status-bg: rgba(8, 20, 8, 0.84);
+  --about-status-border: rgba(51, 255, 51, 0.35);
+  --about-terminal-bg-top: rgba(3, 12, 3, 0.98);
+  --about-terminal-bg-bottom: rgba(8, 18, 8, 0.98);
+  --about-terminal-border: rgba(51, 255, 51, 0.3);
+  --about-terminal-scan: rgba(51, 255, 51, 0.34);
+  --about-terminal-divider: rgba(51, 255, 51, 0.26);
+  --about-linux-icon: #aaffaa;
+}
+
+[data-theme="catppuccin"] {
+  --about-visual-radial-a: rgba(203, 166, 247, 0.2);
+  --about-visual-radial-b: rgba(245, 194, 231, 0.16);
+  --about-visual-bg-start: rgba(24, 24, 37, 0.96);
+  --about-visual-bg-end: rgba(30, 30, 46, 0.96);
+  --about-visual-frame: rgba(245, 194, 231, 0.24);
+  --about-visual-grid: rgba(245, 194, 231, 0.08);
+  --about-visual-ring: rgba(203, 166, 247, 0.25);
+  --about-visual-ring-glow: rgba(203, 166, 247, 0.1);
+  --about-status-bg: rgba(24, 24, 37, 0.86);
+  --about-status-border: rgba(245, 194, 231, 0.3);
+  --about-terminal-bg-top: rgba(24, 24, 37, 0.97);
+  --about-terminal-bg-bottom: rgba(30, 30, 46, 0.98);
+  --about-terminal-border: rgba(245, 194, 231, 0.28);
+  --about-terminal-scan: rgba(203, 166, 247, 0.3);
+  --about-terminal-divider: rgba(245, 194, 231, 0.24);
+  --about-linux-icon: #f5e0dc;
+}
+
+.linux-visual {
+  position: relative;
+  width: 320px;
+  height: 320px;
+}
+
+.linux-visual-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 28px;
+  border: 1px solid var(--terminal-border);
+  background:
+    radial-gradient(circle at 15% 10%, var(--about-visual-radial-a), transparent 48%),
+    radial-gradient(circle at 85% 90%, var(--about-visual-radial-b), transparent 42%),
+    linear-gradient(145deg, var(--about-visual-bg-start), var(--about-visual-bg-end));
+  overflow: hidden;
+  transform-origin: center center;
+  box-shadow: 0 24px 60px rgba(12, 14, 22, 0.58), 0 8px 24px rgba(12, 14, 22, 0.34);
+}
+
+.linux-visual-card::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 26px;
+  border: 1px solid var(--about-visual-frame);
+  pointer-events: none;
+}
+
+.linux-visual-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+      to bottom,
+      var(--about-visual-grid) 0 1px,
+      transparent 1px 3px
+    );
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.linux-ambient-ring {
+  position: absolute;
+  inset: 12px;
+  border-radius: 22px;
+  border: 1px solid var(--about-visual-ring);
+  box-shadow: inset 0 0 20px var(--about-visual-ring-glow);
+  pointer-events: none;
+}
+
+.linux-status-pill {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--about-status-border);
+  background: var(--about-status-bg);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+  text-transform: lowercase;
+  color: var(--text-secondary);
+}
+
+.linux-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  box-shadow: 0 0 10px rgba(166, 227, 161, 0.7);
+}
+
+.linux-status-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.1rem;
+}
+
+.linux-penguin-icon {
+  font-size: 0.78rem;
+  color: var(--about-linux-icon);
+  filter: drop-shadow(0 0 10px rgba(166, 227, 161, 0.3));
+}
+
+.linux-status-icon {
+  opacity: 0.95;
+}
+
+.linux-terminal-screen {
+  position: absolute;
+  top: 78px;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3;
+  border-radius: 14px;
+  border: 1px solid var(--about-terminal-border);
+  background: linear-gradient(180deg, var(--about-terminal-bg-top), var(--about-terminal-bg-bottom));
+  padding: 0.8rem 0.75rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 0.34rem;
+  font-family: var(--font-mono);
+}
+
+.linux-scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 24%;
+  background: linear-gradient(
+      180deg,
+      rgba(166, 227, 161, 0),
+      var(--about-terminal-scan),
+      rgba(166, 227, 161, 0)
+    );
+  pointer-events: none;
+}
+
+.linux-command-line {
+  margin: 0;
+  font-size: 0.67rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.95;
+}
+
+.linux-active-line {
+  margin: 0;
+  margin-top: auto;
+  padding-top: 0.3rem;
+  border-top: 1px solid var(--about-terminal-divider);
+  font-size: 0.67rem;
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  color: var(--text-secondary);
+}
+
+.linux-terminal-user,
+.linux-terminal-prompt {
+  color: var(--accent-green);
+}
+
+.linux-terminal-path {
+  color: var(--accent-blue);
+}
+
+.linux-terminal-command {
+  color: var(--text-primary);
+}
+
+.linux-terminal-cursor {
+  display: inline-block;
+  width: 0.6ch;
+  color: var(--accent-green);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .linux-visual {
+    width: 250px;
+    height: 250px;
+  }
+
+  .linux-status-pill {
+    top: 10px;
+    left: 10px;
+    font-size: 0.52rem;
+  }
+
+  .linux-penguin-icon {
+    font-size: 0.66rem;
+  }
+
+  .linux-terminal-screen {
+    top: 62px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 0.62rem 0.58rem;
+  }
+
+  .linux-command-line,
+  .linux-active-line {
+    font-size: 0.57rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .linux-visual-card,
+  .linux-terminal-screen,
+  .linux-terminal-cursor {
+    transition: none !important;
+  }
+}

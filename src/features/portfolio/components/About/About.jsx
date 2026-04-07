@@ -1,6 +1,6 @@
 import React from 'react'
 import './About.css'
-import profileImage from '../../assets/images/profile/PixelFace.webp'
+import LinuxVisual from './LinuxVisual'
 import { useTranslations } from '../../../../hooks/useTranslations'
 
 const About = () => {
@@ -15,17 +15,7 @@ const About = () => {
 
         <div className="about-content">
           <div className="about-image">
-            <div className="image-wrapper">
-              <img
-                src={profileImage}
-                alt="Luis Carlos Picado - Software Architect"
-                className="profile-image"
-                width="320"
-                height="320"
-                loading="lazy"
-              />
-              <div className="image-overlay"></div>
-            </div>
+            <LinuxVisual />
           </div>
 
           <div className="about-text">
