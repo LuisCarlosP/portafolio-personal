@@ -1,10 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import './Skills.css'
 import { useTranslations } from '../../../../hooks/useTranslations'
 
-const Skills = () => {
+const Skills = ({ replayStagger, prefersReducedMotion }) => {
   const { t, language } = useTranslations()
   const [activeCategory, setActiveCategory] = useState('all')
+  const skillsGridRef = useRef(null)
+  const hasInitializedReplayRef = useRef(false)
 
   const skillCategories = [
     {
@@ -54,19 +56,42 @@ const Skills = () => {
     ? skillCategories
     : skillCategories.filter(cat => cat.id === activeCategory)
 
+  useEffect(() => {
+    if (hasInitializedReplayRef.current) {
+      if (!skillsGridRef.current || typeof replayStagger !== 'function') {
+        return undefined
+      }
+
+      const frameId = requestAnimationFrame(() => {
+        replayStagger(skillsGridRef.current, {
+          itemSelector: '.skill-item[data-anim-item]',
+          duration: 0.45,
+          y: 14,
+          stagger: 0.05
+        })
+      })
+
+      return () => cancelAnimationFrame(frameId)
+    }
+
+    hasInitializedReplayRef.current = true
+    return undefined
+  }, [activeCategory, replayStagger, prefersReducedMotion])
+
   return (
-    <section id="habilidades" className="skills">
+    <section id="habilidades" className="skills" data-anim-section>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" data-anim-heading>
           <h2 className="section-title">{t('skillsTitle')}</h2>
           <p className="section-subtitle">{t('skillsSubtitle')}</p>
         </div>
 
         {/* Category Filter Buttons */}
-        <div className="skills-category-buttons">
+        <div className="skills-category-buttons" data-anim-stagger data-anim-start="top 90%">
           <button
             className={`category-btn ${activeCategory === 'all' ? 'active' : ''}`}
             onClick={() => setActiveCategory('all')}
+            data-anim-item
           >
             <i className="fas fa-th"></i>
             <span>{language === 'es' ? 'General' : 'All'}</span>
@@ -74,6 +99,7 @@ const Skills = () => {
           <button
             className={`category-btn ${activeCategory === 'frontend' ? 'active' : ''}`}
             onClick={() => setActiveCategory('frontend')}
+            data-anim-item
           >
             <i className="fas fa-paint-brush"></i>
             <span>Frontend</span>
@@ -81,6 +107,7 @@ const Skills = () => {
           <button
             className={`category-btn ${activeCategory === 'backend' ? 'active' : ''}`}
             onClick={() => setActiveCategory('backend')}
+            data-anim-item
           >
             <i className="fas fa-server"></i>
             <span>Backend</span>
@@ -88,6 +115,7 @@ const Skills = () => {
           <button
             className={`category-btn ${activeCategory === 'tools' ? 'active' : ''}`}
             onClick={() => setActiveCategory('tools')}
+            data-anim-item
           >
             <i className="fas fa-tools"></i>
             <span>{language === 'es' ? 'Bases de Datos y Herramientas' : 'Databases & Tools'}</span>
@@ -95,7 +123,7 @@ const Skills = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="skills-grid">
+        <div className="skills-grid" data-anim-stagger ref={skillsGridRef}>
           {filteredCategories.map((category, categoryIndex) => (
             <div key={categoryIndex} className="skill-category">
               <h3 className="category-title">{category.title}</h3>
@@ -104,7 +132,7 @@ const Skills = () => {
                   <div
                     key={skillIndex}
                     className="skill-item"
-                    style={{ animationDelay: `${skillIndex * 0.1}s` }}
+                    data-anim-item
                   >
                     <div className="skill-header">
                       <i className={skill.icon}></i>
@@ -115,9 +143,9 @@ const Skills = () => {
                       <div
                         className="skill-progress"
                         style={{
-                          width: `${skill.level}%`,
-                          animationDelay: `${skillIndex * 0.1}s`
+                          width: `${skill.level}%`
                         }}
+                        data-anim-progress={`${skill.level}%`}
                       ></div>
                     </div>
                   </div>
@@ -127,7 +155,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <div className="skills-summary">
+        <div className="skills-summary" data-anim-section>
           <p>{t('skillsSummary')}</p>
         </div>
       </div>

@@ -52,7 +52,7 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="container">
         <div className="hero-content">
-          <div className="hero-text">
+          <div className="hero-text" data-anim-heading>
             <div className="hero-badge">
               <i className="fas fa-code badge-icon"></i>
               <span className="badge-text">{t('heroTitle')}</span>
@@ -68,10 +68,11 @@ const Hero = () => {
             <p className="hero-description">
               {t('heroDescription')}
             </p>
-            <div className="hero-buttons">
+            <div className="hero-buttons" data-anim-stagger data-anim-start="top 90%">
               <Link
                 to="/terminal"
                 className="btn btn-primary"
+                data-anim-item
               >
                 <i className="fas fa-terminal btn-icon"></i>
                 <span className="btn-text">Terminal</span>
@@ -80,13 +81,14 @@ const Hero = () => {
                 href={`${import.meta.env.BASE_URL}documents/CV_Luis_Carlos_Picado_Rojas.pdf`}
                 download="CV_Luis_Carlos_Picado.pdf"
                 className="btn btn-secondary"
+                data-anim-item
               >
                 <i className="fas fa-download btn-icon"></i>
                 <span className="btn-text">{t('downloadCV')}</span>
               </a>
             </div>
           </div>
-          <div className="hero-visual">
+          <div className="hero-visual" data-anim-parallax="6">
             <div className="visual-container">
               <div className="floating-card card-1">
                 <div className="card-content">

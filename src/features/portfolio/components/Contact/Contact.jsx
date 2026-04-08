@@ -66,15 +66,15 @@ const Contact = () => {
   }
 
   return (
-    <section id="contacto" className="contact">
+    <section id="contacto" className="contact" data-anim-section>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" data-anim-heading>
           <h2 className="section-title">{t('contactTitle')}</h2>
           <p className="section-subtitle">{t('contactSubtitle')}</p>
         </div>
 
-        <div className="contact-content">
-          <div className="contact-info-section">
+        <div className="contact-content" data-anim-stagger>
+          <div className="contact-info-section" data-anim-item>
             <div className="contact-description">
               <h3>{t('contactInfo')}</h3>
               <p>
@@ -121,7 +121,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="contact-form-section">
+          <div className="contact-form-section" data-anim-item>
             <div className="contact-form-container">
               <h3>{t('sendMessage') || 'Send me a message'}</h3>
               <p className="form-description">

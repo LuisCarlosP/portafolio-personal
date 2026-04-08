@@ -39,17 +39,17 @@ const Footer = () => {
   }
 
   return (
-    <footer className="footer">
+    <footer className="footer" data-anim-section>
       <div className="container">
-        <div className="footer-content">
-          <div className="footer-section">
+        <div className="footer-content" data-anim-stagger>
+          <div className="footer-section" data-anim-item>
             <h3>Luis Carlos Picado</h3>
             <p>
               {t('footerDescription')}
             </p>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section" data-anim-item>
             <h4>{t('quickLinks')}</h4>
             <ul className="footer-links">
               <li><a href="#inicio" onClick={(e) => handleLinkClick(e, 'inicio')}>{t('home')}</a></li>
@@ -61,7 +61,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section" data-anim-item>
             <h4>{t('themes')}</h4>
             <ul className="footer-links theme-list">
               {themes.map((theme) => (
@@ -79,7 +79,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="footer-section">
+          <div className="footer-section" data-anim-item>
             <h4>{t('contact')}</h4>
             <div className="contact-info">
               <p><i className="fas fa-envelope"></i> picadoluiscarlos@gmail.com</p>

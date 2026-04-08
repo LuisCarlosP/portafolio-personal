@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination, Autoplay } from 'swiper/modules'
 import 'swiper/css'
@@ -12,7 +12,7 @@ import simpleGraphQL from '../../assets/images/projects/SimpleGraphQL.webp'
 import trashIA from '../../assets/images/projects/TrashIA.webp'
 import chess3D from '../../assets/images/projects/chess3D.webp'
 
-const Projects = () => {
+const Projects = ({ replayStagger, prefersReducedMotion }) => {
   const [filter, setFilter] = useState('all')
   const [modalState, setModalState] = useState({
     isOpen: false,
@@ -22,6 +22,9 @@ const Projects = () => {
     codeDescription: ''
   })
   const { t, language } = useTranslations()
+  const sectionRef = useRef(null)
+  const swiperInstanceRef = useRef(null)
+  const hasInitializedReplayRef = useRef(false)
 
   const projects = [
     {
@@ -99,6 +102,51 @@ const Projects = () => {
     ? projects
     : projects.filter(project => project.category === filter)
 
+  useEffect(() => {
+    if (hasInitializedReplayRef.current) {
+      if (!sectionRef.current || typeof replayStagger !== 'function') {
+        return undefined
+      }
+
+      let secondFrameId = null
+      const firstFrameId = requestAnimationFrame(() => {
+        swiperInstanceRef.current?.update()
+
+        secondFrameId = requestAnimationFrame(() => {
+          const visibleSelector = '.projects-swiper .swiper-slide-visible [data-anim-item]'
+          const visibleCards = sectionRef.current.querySelectorAll(visibleSelector)
+
+          if (visibleCards.length > 0) {
+            replayStagger(sectionRef.current, {
+              itemSelector: visibleSelector,
+              duration: 0.45,
+              y: 14,
+              stagger: 0.08
+            })
+            return
+          }
+
+          replayStagger(sectionRef.current, {
+            itemSelector: '.projects-swiper [data-anim-item]',
+            duration: 0.45,
+            y: 14,
+            stagger: 0.08
+          })
+        })
+      })
+
+      return () => {
+        cancelAnimationFrame(firstFrameId)
+        if (secondFrameId) {
+          cancelAnimationFrame(secondFrameId)
+        }
+      }
+    }
+
+    hasInitializedReplayRef.current = true
+    return undefined
+  }, [filter, filteredProjects.length, replayStagger, prefersReducedMotion])
+
   const openModal = (url, title, type, codeDescription = '') => {
     setModalState({
       isOpen: true,
@@ -120,19 +168,20 @@ const Projects = () => {
   }
 
   return (
-    <section id="proyectos" className="projects">
+    <section id="proyectos" className="projects" data-anim-section ref={sectionRef}>
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" data-anim-heading>
           <h2 className="section-title">{t('projectsTitle')}</h2>
           <p className="section-subtitle">{t('projectsSubtitle')}</p>
         </div>
 
-        <div className="filter-buttons">
+        <div className="filter-buttons" data-anim-stagger data-anim-start="top 90%">
           {categories.map(category => (
             <button
               key={category.id}
               className={`filter-btn ${filter === category.id ? 'active' : ''}`}
               onClick={() => setFilter(category.id)}
+              data-anim-item
             >
               {category.name}
             </button>
@@ -165,10 +214,14 @@ const Projects = () => {
             }
           }}
           className="projects-swiper"
+          data-anim-stagger
+          onSwiper={(instance) => {
+            swiperInstanceRef.current = instance
+          }}
         >
           {filteredProjects.map(project => (
             <SwiperSlide key={project.id}>
-              <div className={`project-card ${project.featured ? 'featured' : ''}`}>
+              <div className={`project-card ${project.featured ? 'featured' : ''}`} data-anim-item>
                 <div className="project-image">
                   <img src={project.image} alt={project.title} />
                   {project.featured && <span className="featured-badge">{t('featured')}</span>}
@@ -202,13 +255,14 @@ const Projects = () => {
           ))}
         </Swiper>
 
-        <div className="projects-cta">
+        <div className="projects-cta" data-anim-stagger data-anim-start="top 92%">
           <p>{language === 'es' ? '¿Te interesa ver más proyectos?' : 'Interested in seeing more projects?'}</p>
           <a
             href="https://github.com/LuisCarlosP"
             className="btn btn-outline"
             target="_blank"
             rel="noopener noreferrer"
+            data-anim-item
           >
             {language === 'es' ? 'Ver GitHub' : 'View GitHub'}
           </a>

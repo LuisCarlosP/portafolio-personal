@@ -8,7 +8,7 @@ const About = () => {
   return (
     <section id="acerca" className="about">
       <div className="container">
-        <div className="section-header">
+        <div className="section-header" data-anim-heading>
           <h2 className="section-title">{t('aboutTitle')}</h2>
           <p className="section-subtitle">{t('aboutSubtitle')}</p>
         </div>
@@ -18,7 +18,7 @@ const About = () => {
             <LinuxVisual />
           </div>
 
-          <div className="about-text">
+          <div className="about-text" data-anim-section>
             <h3>{t('aboutRole')}</h3>
             <p>
               {t('aboutDescription1')}
@@ -27,26 +27,27 @@ const About = () => {
               {t('aboutDescription2')}
             </p>
 
-            <div className="stats">
-              <div className="stat">
+            <div className="stats" data-anim-stagger>
+              <div className="stat" data-anim-item>
                 <span className="stat-number">10+</span>
                 <span className="stat-label">{t('learningProjects')}</span>
               </div>
-              <div className="stat">
+              <div className="stat" data-anim-item>
                 <span className="stat-number">3+</span>
                 <span className="stat-label">{t('studyingYear')}</span>
               </div>
-              <div className="stat">
+              <div className="stat" data-anim-item>
                 <span className="stat-number">20+</span>
                 <span className="stat-label">{t('technologiesLearned')}</span>
               </div>
             </div>
 
-            <div className="about-actions">
+            <div className="about-actions" data-anim-stagger data-anim-start="top 92%">
               <a
                 href={`${import.meta.env.BASE_URL}documents/CV_Luis_Carlos_Picado_Rojas.pdf`}
                 download="CV_Luis_Carlos_Picado.pdf"
                 className="btn btn-primary"
+                data-anim-item
               >
                 {t('downloadCV')}
               </a>
